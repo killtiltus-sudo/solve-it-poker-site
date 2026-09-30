@@ -752,8 +752,10 @@ renderPricing();
 // https://solve-it-poker.lemonsqueezy.com/billing
 const LS_STORE = "solve-it-poker";
 const SHOP = {
-  checkout: { solve: "", track: "", improve: "" },
-  checkoutYear: { solve: "", track: "", improve: "" },
+  // Un lien par produit : la periode, mensuelle ou annuelle, se choisit sur la page de
+  // paiement. Avec les liens par variante on pourra pre-selectionner la bonne periode.
+  checkout:     { solve: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/894e9b9c-4fad-4d7d-ad39-4d13338baa80", track: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/cfda99c7-53fb-4a62-b889-813955a32405", improve: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/b836d8ac-abc4-4731-b5f1-6d7752224629" },
+  checkoutYear: { solve: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/894e9b9c-4fad-4d7d-ad39-4d13338baa80", track: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/cfda99c7-53fb-4a62-b889-813955a32405", improve: "https://solve-it-poker.lemonsqueezy.com/checkout/buy/b836d8ac-abc4-4731-b5f1-6d7752224629" },
   portal: LS_STORE ? `https://${LS_STORE}.lemonsqueezy.com/billing` : "",
 };
 document.querySelectorAll("[data-plan]").forEach((a) => a.addEventListener("click", (e) => {
