@@ -1,10 +1,14 @@
 {
-  "version": "0.33.0",
-  "date": "2026-09-30",
+  "version": "0.35.0",
+  "date": "2026-10-01",
   "url": "https://www.solve-it-poker.com/",
   "fichiers": {
     "mac-arm": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Mac-Apple-Silicon.zip",
     "mac-intel": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Mac-Intel.zip",
     "windows": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Windows.zip"
+  },
+  "flux": {
+    "mac-arm": "https://www.solve-it-poker.com/maj-mac-arm.json",
+    "mac-intel": "https://www.solve-it-poker.com/maj-mac-intel.json"
   }
 }
