@@ -1,6 +1,6 @@
 {
   "url": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Mac-Apple-Silicon.zip",
   "name": "Solve It Poker",
-  "notes": "",
+  "notes": "Ranges adaptées sans limp fantôme, nouveaux logos de type de joueur, fiche du HUD translucide, cash game dans le tracker.",
   "pub_date": "2026-10-01T00:00:00+00:00"
 }
