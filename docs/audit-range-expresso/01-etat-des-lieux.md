@@ -50,7 +50,7 @@ Pour pouvoir auditer l'application, j'ai téléchargé le zip Windows public (12
 - `main.js` l. 3 et 11 : seul réseau prévu = API de licences Lemon Squeezy (`https://api.lemonsqueezy.com/`) ; l. 67 : lecture de `https://www.solve-it-poker.com/version.json` pour la mise à jour ; l. 20 : fenêtre principale avec `contextIsolation`, `sandbox`, sans `nodeIntegration`.
 - `app/index.html` l. 658 : bandeau « Mode développement : boutique Lemon Squeezy non configurée, toutes les fonctions sont ouvertes ».
 - `main.js` l. 737-1022 : capture des fenêtres de tables (`desktopCapturer`) et **lecture des pseudos par OCR** (tesseract.js) pour associer chaque HUD à sa table.
-- Binaires **non signés** : la notice demande de contourner Gatekeeper (dont `xattr -dr com.apple.quarantine`) et SmartScreen.
+- Signature (corrigée après vérification par l'agent développement) : les **deux zips Mac de la v0.36.0 sont signés** « Developer ID Application » (Team ID 62KH3D2T33), avec runtime renforcé et ticket de notarisation agrafé (certificat lu dans le binaire Mac, en-tête `s8ch` du ticket). **Seul l'exécutable Windows n'est pas signé** (pas de signature Authenticode). La notice testeurs, qui dit l'application « pas encore signée » et fait lancer `xattr -dr com.apple.quarantine`, est donc **périmée** pour Mac.
 
 ---
 
@@ -74,7 +74,7 @@ Pour pouvoir auditer l'application, j'ai téléchargé le zip Windows public (12
 | Paiement / essai gratuit 7 jours | **Non fonctionnel** : Lemon Squeezy a refusé la boutique le 01/10/2026, liens vides | `index.html` l. 763-772 |
 | Résiliation en ligne « en trois clics » | **Non fonctionnelle** : ni service ni portail configuré ; affiche « Le service de résiliation n'est pas encore configuré » | `index.html` l. 789-825 ; test navigateur |
 | Licence et activation | Codée pour l'API Lemon Squeezy, donc **inutilisable** en l'état ; l'application tombe en « Mode développement » tout ouvert | `main.js` l. 51-60 ; `app-index` l. 658 |
-| Mise à jour automatique macOS | Flux publiés ; fonctionnement avec une application non signée **à confirmer** (Squirrel.Mac exige normalement une signature) | `maj-mac-*.json` ; `main.js` l. 113-150 |
+| Mise à jour automatique macOS | Flux publiés ; l'application Mac étant signée et notarisée, la mise à jour est techniquement possible. Les fichiers `maj-mac-*.json` ne suivent pas le format attendu par `serverType: "json"` : fonctionnement réel **à confirmer** par un test 0.35 → 0.36 sur un Mac | `maj-mac-*.json` ; `main.js` l. 113-150 |
 | Mise à jour Windows | Pas de flux automatique ; l'application propose de télécharger la nouvelle version | `version.json` ; `app-index` l. 637-644 |
 | PMU Poker, Betclic, bet365 | **Prévus** (FAQ), aucun signe d'implémentation relevé à ce stade | `index.html` FAQ |
 | Jugement des décisions après le flop | **Non disponible** (« ne juge pas encore ») | `index.html` FAQ |
@@ -110,6 +110,6 @@ Aucune vérification n'est prévue par le projet (pas de tests, lint ni build). 
 
 1. La version en ligne du site correspond-elle au commit `ffefc4c` ? (comparer les deux)
 2. Où se trouvent les sources du site (`scripts_v5.js`…) et de l'application ? Peut-on les verser dans un dépôt (privé) pour que les corrections ne soient pas perdues ?
-3. Combien de personnes ont téléchargé la version de test ? (statistiques de téléchargement des releases GitHub)
+3. Combien de personnes ont réellement téléchargé la version de test ? Les compteurs GitHub ne le disent pas : 49 téléchargements cumulés le 2 octobre 2026 vers 11 h UTC, mais ce total inclut les mises à jour automatiques Mac et **environ 25 téléchargements partiels et 1 complet faits pendant cet audit** (le compteur du zip Mac Apple Silicon v0.36.0 est passé de 1 à 26 à cause des lectures de l'audit). Seul votre propre suivi des testeurs donne le vrai chiffre.
 4. Le fonctionnement réel de l'application sur Mac (Apple Silicon/Intel) et Windows : à vérifier par une session de test manuelle (import d'historiques Winamax, HUD, verrouillage du solveur).
 5. Quel prestataire de paiement et de licence remplacera Lemon Squeezy ?
