@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>6-max tournament range: button at 20 BB, raise or shove — Solve It Poker</title>
+<meta name="description" content="The 20 BB button range in 6-max tournaments with antes: raise to 2 BB, shove or fold, hand by hand. Free solver-calculated chart.">
+<link rel="canonical" href="https://www.solve-it-poker.com/en/ranges/tournament-button-20bb/">
+<link rel="alternate" hreflang="fr" href="https://www.solve-it-poker.com/ranges/tournoi-bouton-20bb/">
+<link rel="alternate" hreflang="en" href="https://www.solve-it-poker.com/en/ranges/tournament-button-20bb/">
+<link rel="alternate" hreflang="es" href="https://www.solve-it-poker.com/es/ranges/torneo-boton-20bb/">
+<link rel="alternate" hreflang="x-default" href="https://www.solve-it-poker.com/ranges/tournoi-bouton-20bb/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#2A1B5C">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Solve It Poker">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="6-max tournament range: button at 20 BB, raise or shove">
+<meta property="og:description" content="The 20 BB button range in 6-max tournaments with antes: raise to 2 BB, shove or fold, hand by hand. Free solver-calculated chart.">
+<meta property="og:url" content="https://www.solve-it-poker.com/en/ranges/tournament-button-20bb/">
+<meta property="og:image" content="https://www.solve-it-poker.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/logo-icone.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.solve-it-poker.com/en/"}, {"@type": "ListItem", "position": 2, "name": "Free ranges", "item": "https://www.solve-it-poker.com/en/ranges/"}, {"@type": "ListItem", "position": 3, "name": "Button at 20 BB, folded to you", "item": "https://www.solve-it-poker.com/en/ranges/tournament-button-20bb/"}]}</script>
+<link rel="preload" href="/assets/fonts/BarlowSemiCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("/assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("/assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{
+  /* Mêmes couleurs que l'application (thème clair). */
+  --bg:#EEF0EC; --bg2:#E6E9E5; --surface:#FFFFFF; --line:#D2D8D4; --ink:#15201C; --muted:#5B6863;
+  --brand:#B34279; --brand-hi:#247260; --pink:#B34279; --cream:#F7F8F6;
+  --shove:#B8322A; --raise:#E0962A; --limp:#2F8F7A; --call:#2E62B8; --fold:#DDE1DE;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --wrap:1160px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--cond);line-height:1.02;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.2vw,3rem)}
+.lead{color:var(--muted);font-size:1.12rem;max-width:62ch}
+.todo{outline:1px dashed var(--pink);outline-offset:3px;border-radius:4px}
+
+/* bandeau de prévention */
+.warn{background:var(--cream);color:#120B2B;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.01em;text-align:center;padding:7px 14px;line-height:1.35}
+.warn a{text-decoration:underline}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+.word{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:1.65rem;text-decoration:none;letter-spacing:-.015em}
+.word .accent{color:var(--brand)}
+.logo-ic{width:36px;height:36px;flex:none;border-radius:9px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+@media (max-width:820px){.nav ul{display:none}}
+.navr{display:flex;align-items:center;gap:14px}
+.resil-link{background:none;border:0;padding:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+.resil-link:hover{color:var(--ink)}
+@media (max-width:520px){.resil-link{font-size:.8rem;max-width:88px;text-align:right;line-height:1.2}.navr{gap:10px}.navr .btn.small{white-space:nowrap;padding:8px 12px}.word{font-size:1.4rem}.logo-ic{width:30px;height:30px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-hi)}
+.btn.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn.ghost:hover{border-color:var(--muted)}
+.btn.small{padding:8px 16px;font-size:.95rem}
+
+/* héros */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+.eyebrow{font-weight:600;font-style:italic;text-transform:lowercase;letter-spacing:.03em;color:var(--brand);margin:0 0 8px}
+.hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem)}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .lead{margin:20px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.langpick{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.langpick button{font:inherit;font-weight:600;font-size:.86rem;border:0;background:transparent;color:var(--muted);padding:7px 12px;cursor:pointer}
+.langpick button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.meta{margin:18px 0 0;color:var(--muted);font-size:.95rem}
+
+/* démo */
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.demo-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.demo-head b{font-family:var(--cond);font-size:1.25rem}
+.demo-head span{color:var(--muted);font-size:.9rem}
+.mini{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
+.mini i{aspect-ratio:1/1;border-radius:3px;background:var(--fold);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-style:normal;font-weight:600;font-size:clamp(7px,1.05vw,12px);line-height:1;letter-spacing:.1px;overflow:hidden;color:#15201C}
+.mini i.a{color:#FFFFFF}.mini i.r{color:#15201C}.mini i.f{color:#5B6863}
+.slider{margin:16px 0 6px}
+.slider label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.slider output{font-family:var(--cond);font-size:1.35rem;color:var(--brand)}
+input[type=range]{width:100%;accent-color:var(--brand)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 0;padding:0;list-style:none;font-size:.9rem;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{margin-bottom:38px}
+.head .lead{margin-top:14px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.feat h3{font-size:1.45rem;margin:10px 0 6px}
+.feat p{margin:0;color:var(--muted);font-size:.98rem}
+.chip{display:inline-block;width:26px;height:6px;border-radius:9px}
+
+.shot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:40px;align-items:center;margin-bottom:64px}
+.shot:last-child{margin-bottom:0}
+.shot.rev{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.shot.rev .txt{order:2}
+@media (max-width:900px){.shot,.shot.rev{grid-template-columns:1fr}.shot.rev .txt{order:0}}
+.shot h3{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:10px}
+.shot p{color:var(--muted);margin:0 0 10px}
+.frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 40px rgba(21,32,28,.14)}
+.frame.narrow{max-width:420px;margin:0 auto}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;counter-increment:s}
+.steps li::before{content:counter(s);display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--brand);color:#120B2B;font-weight:700;margin-bottom:10px}
+.steps b{display:block;font-family:var(--cond);font-size:1.3rem;margin-bottom:4px}
+.steps span{color:var(--muted)}
+
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.trust ul{margin:0;padding-left:18px;color:var(--muted)}
+.trust li{margin:6px 0}
+.trust h3{font-size:1.5rem;margin-bottom:10px}
+
+.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.price{display:flex;flex-direction:column}
+.price .btn{margin-top:auto}
+.incl{list-style:none;padding:0;margin:0 0 20px;text-align:left;color:var(--muted)}
+.incl li{padding:6px 0 6px 24px;border-top:1px solid var(--line);position:relative}
+.incl li::before{content:"";position:absolute;left:4px;top:13px;width:10px;height:6px;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
+.billing{display:inline-flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:18px}
+.billing button{border:0;background:none;color:var(--muted);font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;cursor:pointer}
+.billing button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.billing span{color:var(--pink);font-size:.85em;margin-left:4px}
+.billing button[aria-pressed="true"] span{color:#C2367A}
+@media (max-width:1180px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.plans{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+.price{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 24px;text-align:center}
+.price.featured{border-color:var(--brand)}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);margin:0;background:var(--pink);color:#120B2B;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.plan-name{margin:0;font-weight:600;color:var(--muted)}
+.plan-sub{margin:0 0 20px;color:var(--muted)}
+.price .btn{width:100%}
+.amount span{font-size:1.2rem;color:var(--muted);font-weight:600;margin-left:4px}
+.included{max-width:620px;margin:28px auto 0;padding-left:20px;color:var(--muted);columns:2;column-gap:28px}
+@media (max-width:640px){.included{columns:1}}
+.included li{margin:6px 0;break-inside:avoid}
+.fine{text-align:center;color:var(--muted);font-size:.9rem;margin:18px 0 0}
+.price .amount{font-family:var(--cond);font-weight:700;font-size:3.4rem;margin:8px 0 2px}
+
+
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);margin:10px 0 0}
+
+dialog{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:0;width:min(480px,92vw)}
+dialog::backdrop{background:rgba(8,4,20,.7)}
+#resil-form{padding:24px}
+#resil-form h2{font-size:1.9rem;margin:2px 0 12px}
+.r-step{margin:0;color:var(--pink);font-weight:600;font-size:.9rem}
+#resil-form p{color:var(--muted);margin:0 0 12px}
+#resil-form label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.92rem;margin-bottom:12px}
+#resil-form input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.r-btns{display:flex;justify-content:flex-end;gap:10px;margin-top:8px;flex-wrap:wrap}
+.r-err{color:var(--pink)!important;font-weight:600}
+.r-sum{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0 0 12px}
+.r-sum dt{color:var(--muted)} .r-sum dd{margin:0;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:40px 0 30px;color:var(--muted);font-size:.92rem}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-start}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+.legal{margin-top:22px;font-size:.84rem;max-width:90ch}
+.prevention{margin-top:22px;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:14px 16px;color:var(--ink);font-weight:600;text-transform:uppercase;font-size:.84rem;line-height:1.45}
+.prevention small{display:block;font-size:.78rem;font-weight:600;margin-top:4px}
+
+/* ---- v5 : bandeau des nouveautés ---- */
+.news{border-bottom:1px solid var(--line);background:var(--surface)}
+.news .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:12px;padding-bottom:12px}
+.news-t{font-family:var(--cond);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;background:var(--pink);color:#fff;border-radius:999px;padding:4px 11px}
+.news a{font-weight:600;font-size:.94rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--bg)}
+.news a:hover{border-color:var(--brand);color:var(--brand-hi)}
+
+/* ---- fonctions regroupées par formule ---- */
+.fgroup{margin-top:38px}
+.fgroup:first-of-type{margin-top:0}
+.fgroup-t{display:flex;align-items:center;gap:10px;font-size:1.65rem;margin:0 0 14px}
+.subhead{font-size:clamp(1.6rem,3vw,2.1rem);margin:8px 0 30px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+.subhead:not(:first-of-type){margin-top:72px}
+.shot{scroll-margin-top:90px}
+.shot p.small{font-size:.92rem}
+
+/* ---- tarifs : étape 1, le jeu ; étape 2, la formule ---- */
+.step-t{display:flex;align-items:center;gap:12px;font-family:var(--cond);font-weight:700;font-size:1.55rem;margin:0 0 16px}
+.step-n{display:inline-flex;flex:none;width:36px;height:36px;border-radius:50%;align-items:center;justify-content:center;background:var(--ink);color:var(--bg);font-size:1.15rem}
+.gamepick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 44px}
+@media (max-width:760px){.gamepick{grid-template-columns:1fr}}
+.gamepick button{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font:inherit;color:var(--ink);background:var(--surface);border:3px solid var(--line);border-radius:20px;padding:26px 18px 22px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s}
+.gamepick button:hover{border-color:var(--brand);transform:translateY(-2px)}
+.gamepick button b{font-family:var(--cond);font-size:2.2rem;line-height:1}
+.gamepick .gp-sub{color:var(--muted);font-size:.98rem;line-height:1.35}
+.gamepick button[aria-checked="true"]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--surface));box-shadow:0 12px 30px rgba(47,143,122,.28)}
+.gamepick button[aria-checked="true"] .gp-ic{background:var(--brand);color:#fff}
+.gp-check{position:absolute;top:12px;right:14px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:none;align-items:center;justify-content:center}
+.gamepick button[aria-checked="true"] .gp-check{display:flex}
+.gp-ic{width:54px;height:54px;border-radius:14px;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:6px;color:var(--brand)}
+.gp-ic svg{width:30px;height:30px}
+.gp-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.step-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}
+.step-row .step-t{margin:0}
+.step-row .billing{margin-top:0}
+.plans.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:980px){.plans.three{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+.plan-game{margin:4px 0 0;font-weight:600;color:var(--brand-hi);min-height:1.5em}
+.price .amount{transition:opacity .15s}
+.freeline{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin:24px auto 0;padding:14px 18px;border:1px dashed var(--line);border-radius:14px;max-width:760px;text-align:center;color:var(--muted)}
+.freeline b{color:var(--ink)}
+/* petit écran : le bouton d'essai du bandeau passe dans le héros, pour que le lien de résiliation et la langue restent visibles */
+@media (max-width:520px){.navr .btn.small{display:none}.news a{font-size:.88rem;padding:4px 10px}}
+
+/* Navigation compacte sur petit écran : sous 820 px le menu disparaissait sans rien pour le remplacer,
+   et à 360 px le bouton de langue sortait de l'écran. */
+@media (max-width:820px){
+  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;gap:8px}
+  .nav nav{order:3;width:100%}
+  .nav ul{display:flex;gap:16px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav ul a{font-size:.9rem;white-space:nowrap}
+}
+@media (max-width:420px){
+  .navr{gap:6px}
+  /* le lien de resiliation reste visible : obligation d'acces permanent */
+  .resil-link{font-size:.74rem;padding:4px 7px}
+  .langpick button{padding:4px 7px;font-size:.78rem}
+  .nav .word span{font-size:1.2rem}
+}
+
+/* Message affiche quand aucun lien de paiement n'est configure (voir PAIEMENT dans scripts_v5.js). */
+.paiement-bientot{margin:8px 0 0;font-size:13px;line-height:1.35;color:var(--muted,#6b7280);text-align:center}
+
+/* Ligne d'aide du pied de page : plus de majuscules ni de cadre d'alerte, c'est une information, pas un avertissement reglementaire. */
+.prevention{margin-top:18px;border:0;background:none;padding:0;font-weight:400;text-transform:none;font-size:.82rem;line-height:1.5;color:var(--muted,#6b7280)}
+.prevention a{text-decoration:underline}
+
+.rpage{padding:34px 0 60px}
+.crumb{font-size:.9rem;color:var(--muted);margin:0 0 18px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--ink)}
+.rpage h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 14px}
+.rpage h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin:36px 0 12px}
+.rlay{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:start;margin-top:26px}
+@media (max-width:900px){.rlay{grid-template-columns:1fr}}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.rcard h2{margin:0 0 12px;font-size:1.15rem}
+.rg{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
+.rg i{aspect-ratio:1/1;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 clamp(.52rem,1.25vw,.8rem)/1 var(--cond);font-style:normal;color:var(--ink)}
+.rg i.d{color:#fff}
+.rnote{font-size:.85rem;color:var(--muted);margin:12px 0 0}
+.rkeys{margin:0;padding-left:1.2em}.rkeys li{margin:0 0 10px}
+.rhyp{margin:0;padding-left:1.2em;color:var(--muted)}.rhyp li{margin:0 0 6px}
+.rtxt dt{font-weight:600;margin-top:12px}.rtxt dd{margin:4px 0 0;color:var(--muted)}
+.rcta{background:var(--ink);color:var(--cream);border-radius:20px;padding:28px;margin-top:44px}
+.rcta h2{margin:0 0 10px;color:var(--cream)}.rcta p{margin:0 0 18px;color:color-mix(in srgb,var(--cream) 80%,transparent);max-width:62ch}
+.rcta .btn.ghost{color:var(--cream);border-color:color-mix(in srgb,var(--cream) 40%,transparent)}
+.rlist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.rlist a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.rlist a:hover{border-color:var(--muted)}
+.rlist b{display:block;font-family:var(--cond);font-size:1.12rem}
+.rlist span{color:var(--muted);font-size:.9rem}
+.langpick a{font-weight:600;font-size:.78rem;color:var(--muted);padding:4px 7px;text-decoration:none;display:inline-block}
+.langpick a[aria-current="true"]{background:var(--ink);color:var(--cream)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="word" href="/en/" aria-label="Solve It Poker"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
+<rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="130.0" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="353.4" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<circle cx="512" cy="512" r="227" fill="#2A1B5C"/>
+<circle cx="512" cy="512" r="174.0" fill="none" stroke="#FF6B57" stroke-width="62"/>
+<rect x="495.0" y="306.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(0.0 512.0 338.0)"/>
+<rect x="645.7" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(60.0 662.7 425.0)"/>
+<rect x="645.7" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(120.0 662.7 599.0)"/>
+<rect x="495.0" y="654.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(180.0 512.0 686.0)"/>
+<rect x="344.3" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(240.0 361.3 599.0)"/>
+<rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
+<circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
+<rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
+</svg><span>solve it <span class="accent">poker</span></span></a><nav aria-label="Navigation"><ul><li><a href="/en/ranges/">Free ranges</a></li><li><a href="/en/#fonctions">Features</a></li><li><a href="/en/#tarif">Pricing</a></li></ul></nav><div class="navr"><a class="btn primary small" href="/en/#tarif">Free trial</a><div class="langpick" role="group"><a href="/ranges/tournoi-bouton-20bb/" hreflang="fr" lang="fr">FR</a><a href="/en/ranges/tournament-button-20bb/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/es/ranges/torneo-boton-20bb/" hreflang="es" lang="es">ES</a></div></div></div></header>
+<main class="rpage"><div class="wrap"><p class="crumb"><a href="/en/">Home</a> › <a href="/en/ranges/">Free ranges</a> › Button at 20 BB</p><p class="eyebrow">free range · 6-max tournament</p><h1>Button at 20 BB, folded to you</h1><p class="lead">6-max tournament, 20 big blinds, table ante: the first three players have folded and it is your turn on the button. Here is what the equilibrium calculated by Solve It Poker plays.</p><div class="rlay"><div class="rcard"><h2>Range chart</h2><div class="rg" role="img" aria-label="Range chart"><i class="" style="background:var(--raise)" title="AA : Raise to 2 BB 100%">AA</i><i class="" style="background:var(--raise)" title="AKs : Raise to 2 BB 100%">AKs</i><i class="" style="background:var(--raise)" title="AQs : Raise to 2 BB 100%">AQs</i><i class="" style="background:var(--raise)" title="AJs : Raise to 2 BB 100%">AJs</i><i class="" style="background:var(--raise)" title="ATs : Raise to 2 BB 100%">ATs</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 95%,var(--raise) 95% 100%)" title="A9s : All-in 95%, Raise to 2 BB 5%">A9s</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 32%,var(--raise) 32% 100%)" title="A8s : All-in 32%, Raise to 2 BB 68%">A8s</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 9%,var(--raise) 9% 100%)" title="A7s : All-in 9%, Raise to 2 BB 91%">A7s</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 8%,var(--raise) 8% 100%)" title="A6s : All-in 8%, Raise to 2 BB 92%">A6s</i><i class="d" style="background:var(--shove)" title="A5s : All-in 100%">A5s</i><i class="d" style="background:var(--shove)" title="A4s : All-in 100%">A4s</i><i class="d" style="background:var(--shove)" title="A3s : All-in 100%">A3s</i><i class="d" style="background:var(--shove)" title="A2s : All-in 100%">A2s</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 58%,var(--raise) 58% 100%)" title="AKo : All-in 58%, Raise to 2 BB 42%">AKo</i><i class="" style="background:var(--raise)" title="KK : Raise to 2 BB 100%">KK</i><i class="" style="background:var(--raise)" title="KQs : Raise to 2 BB 100%">KQs</i><i class="" style="background:var(--raise)" title="KJs : Raise to 2 BB 100%">KJs</i><i class="" style="background:var(--raise)" title="KTs : Raise to 2 BB 100%">KTs</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 85%,var(--raise) 85% 100%)" title="K9s : All-in 85%, Raise to 2 BB 15%">K9s</i><i class="" style="background:var(--raise)" title="K8s : Raise to 2 BB 100%">K8s</i><i class="" style="background:var(--raise)" title="K7s : Raise to 2 BB 100%">K7s</i><i class="" style="background:var(--raise)" title="K6s : Raise to 2 BB 100%">K6s</i><i class="" style="background:var(--raise)" title="K5s : Raise to 2 BB 100%">K5s</i><i class="" style="background:var(--raise)" title="K4s : Raise to 2 BB 100%">K4s</i><i class="" style="background:var(--raise)" title="K3s : Raise to 2 BB 100%">K3s</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 5%,var(--fold) 5% 100%)" title="K2s : Raise to 2 BB 5%, Fold 95%">K2s</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 57%,var(--raise) 57% 100%)" title="AQo : All-in 57%, Raise to 2 BB 43%">AQo</i><i class="d" style="background:var(--shove)" title="KQo : All-in 100%">KQo</i><i class="" style="background:var(--raise)" title="QQ : Raise to 2 BB 100%">QQ</i><i class="d" style="background:var(--shove)" title="QJs : All-in 100%">QJs</i><i class="d" style="background:var(--shove)" title="QTs : All-in 100%">QTs</i><i class="d" style="background:var(--shove)" title="Q9s : All-in 100%">Q9s</i><i class="" style="background:var(--raise)" title="Q8s : Raise to 2 BB 100%">Q8s</i><i class="" style="background:var(--raise)" title="Q7s : Raise to 2 BB 100%">Q7s</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 13%,var(--fold) 13% 100%)" title="Q6s : Raise to 2 BB 13%, Fold 87%">Q6s</i><i class="" style="background:var(--fold)" title="Q5s : Fold 100%">Q5s</i><i class="" style="background:var(--fold)" title="Q4s : Fold 100%">Q4s</i><i class="" style="background:var(--fold)" title="Q3s : Fold 100%">Q3s</i><i class="" style="background:var(--fold)" title="Q2s : Fold 100%">Q2s</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 94%,var(--raise) 94% 100%)" title="AJo : All-in 94%, Raise to 2 BB 6%">AJo</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 89%,var(--raise) 89% 100%)" title="KJo : All-in 89%, Raise to 2 BB 11%">KJo</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 97%,var(--raise) 97% 100%)" title="QJo : All-in 97%, Raise to 2 BB 3%">QJo</i><i class="" style="background:var(--raise)" title="JJ : Raise to 2 BB 100%">JJ</i><i class="d" style="background:var(--shove)" title="JTs : All-in 100%">JTs</i><i class="d" style="background:var(--shove)" title="J9s : All-in 100%">J9s</i><i class="d" style="background:var(--shove)" title="J8s : All-in 100%">J8s</i><i class="" style="background:var(--fold)" title="J7s : Fold 100%">J7s</i><i class="" style="background:var(--fold)" title="J6s : Fold 100%">J6s</i><i class="" style="background:var(--fold)" title="J5s : Fold 100%">J5s</i><i class="" style="background:var(--fold)" title="J4s : Fold 100%">J4s</i><i class="" style="background:var(--fold)" title="J3s : Fold 100%">J3s</i><i class="" style="background:var(--fold)" title="J2s : Fold 100%">J2s</i><i class="d" style="background:var(--shove)" title="ATo : All-in 100%">ATo</i><i class="" style="background:var(--raise)" title="KTo : Raise to 2 BB 100%">KTo</i><i class="" style="background:var(--raise)" title="QTo : Raise to 2 BB 100%">QTo</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 41%,var(--raise) 41% 100%)" title="JTo : All-in 41%, Raise to 2 BB 59%">JTo</i><i class="" style="background:var(--raise)" title="TT : Raise to 2 BB 100%">TT</i><i class="d" style="background:var(--shove)" title="T9s : All-in 100%">T9s</i><i class="d" style="background:var(--shove)" title="T8s : All-in 100%">T8s</i><i class="" style="background:var(--fold)" title="T7s : Fold 100%">T7s</i><i class="" style="background:var(--fold)" title="T6s : Fold 100%">T6s</i><i class="" style="background:var(--fold)" title="T5s : Fold 100%">T5s</i><i class="" style="background:var(--fold)" title="T4s : Fold 100%">T4s</i><i class="" style="background:var(--fold)" title="T3s : Fold 100%">T3s</i><i class="" style="background:var(--fold)" title="T2s : Fold 100%">T2s</i><i class="d" style="background:var(--shove)" title="A9o : All-in 100%">A9o</i><i class="" style="background:var(--raise)" title="K9o : Raise to 2 BB 100%">K9o</i><i class="" style="background:var(--raise)" title="Q9o : Raise to 2 BB 100%">Q9o</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 50%,var(--fold) 50% 100%)" title="J9o : Raise to 2 BB 50%, Fold 50%">J9o</i><i class="" style="background:var(--fold)" title="T9o : Fold 100%">T9o</i><i class="" style="background:var(--raise)" title="99 : Raise to 2 BB 100%">99</i><i class="d" style="background:var(--shove)" title="98s : All-in 100%">98s</i><i class="d" style="background:var(--shove)" title="97s : All-in 100%">97s</i><i class="" style="background:var(--fold)" title="96s : Fold 100%">96s</i><i class="" style="background:var(--fold)" title="95s : Fold 100%">95s</i><i class="" style="background:var(--fold)" title="94s : Fold 100%">94s</i><i class="" style="background:var(--fold)" title="93s : Fold 100%">93s</i><i class="" style="background:var(--fold)" title="92s : Fold 100%">92s</i><i class="d" style="background:var(--shove)" title="A8o : All-in 100%">A8o</i><i class="" style="background:var(--raise)" title="K8o : Raise to 2 BB 100%">K8o</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 45%,var(--fold) 45% 100%)" title="Q8o : Raise to 2 BB 45%, Fold 55%">Q8o</i><i class="" style="background:var(--fold)" title="J8o : Fold 100%">J8o</i><i class="" style="background:var(--fold)" title="T8o : Fold 100%">T8o</i><i class="" style="background:var(--fold)" title="98o : Fold 100%">98o</i><i class="" style="background:var(--raise)" title="88 : Raise to 2 BB 100%">88</i><i class="d" style="background:var(--shove)" title="87s : All-in 100%">87s</i><i class="" style="background:var(--fold)" title="86s : Fold 100%">86s</i><i class="" style="background:var(--fold)" title="85s : Fold 100%">85s</i><i class="" style="background:var(--fold)" title="84s : Fold 100%">84s</i><i class="" style="background:var(--fold)" title="83s : Fold 100%">83s</i><i class="" style="background:var(--fold)" title="82s : Fold 100%">82s</i><i class="d" style="background:var(--shove)" title="A7o : All-in 100%">A7o</i><i class="" style="background:var(--raise)" title="K7o : Raise to 2 BB 100%">K7o</i><i class="" style="background:var(--fold)" title="Q7o : Fold 100%">Q7o</i><i class="" style="background:var(--fold)" title="J7o : Fold 100%">J7o</i><i class="" style="background:var(--fold)" title="T7o : Fold 100%">T7o</i><i class="" style="background:var(--fold)" title="97o : Fold 100%">97o</i><i class="" style="background:var(--fold)" title="87o : Fold 100%">87o</i><i class="d" style="background:linear-gradient(90deg,var(--shove) 0% 94%,var(--raise) 94% 100%)" title="77 : All-in 94%, Raise to 2 BB 6%">77</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 39%,var(--fold) 39% 100%)" title="76s : All-in 39%, Fold 61%">76s</i><i class="" style="background:var(--fold)" title="75s : Fold 100%">75s</i><i class="" style="background:var(--fold)" title="74s : Fold 100%">74s</i><i class="" style="background:var(--fold)" title="73s : Fold 100%">73s</i><i class="" style="background:var(--fold)" title="72s : Fold 100%">72s</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 32%,var(--raise) 32% 100%)" title="A6o : All-in 32%, Raise to 2 BB 68%">A6o</i><i class="" style="background:var(--raise)" title="K6o : Raise to 2 BB 100%">K6o</i><i class="" style="background:var(--fold)" title="Q6o : Fold 100%">Q6o</i><i class="" style="background:var(--fold)" title="J6o : Fold 100%">J6o</i><i class="" style="background:var(--fold)" title="T6o : Fold 100%">T6o</i><i class="" style="background:var(--fold)" title="96o : Fold 100%">96o</i><i class="" style="background:var(--fold)" title="86o : Fold 100%">86o</i><i class="" style="background:var(--fold)" title="76o : Fold 100%">76o</i><i class="d" style="background:var(--shove)" title="66 : All-in 100%">66</i><i class="" style="background:var(--fold)" title="65s : Fold 100%">65s</i><i class="" style="background:var(--fold)" title="64s : Fold 100%">64s</i><i class="" style="background:var(--fold)" title="63s : Fold 100%">63s</i><i class="" style="background:var(--fold)" title="62s : Fold 100%">62s</i><i class="d" style="background:var(--shove)" title="A5o : All-in 100%">A5o</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 42%,var(--fold) 42% 100%)" title="K5o : Raise to 2 BB 42%, Fold 58%">K5o</i><i class="" style="background:var(--fold)" title="Q5o : Fold 100%">Q5o</i><i class="" style="background:var(--fold)" title="J5o : Fold 100%">J5o</i><i class="" style="background:var(--fold)" title="T5o : Fold 100%">T5o</i><i class="" style="background:var(--fold)" title="95o : Fold 100%">95o</i><i class="" style="background:var(--fold)" title="85o : Fold 100%">85o</i><i class="" style="background:var(--fold)" title="75o : Fold 100%">75o</i><i class="" style="background:var(--fold)" title="65o : Fold 100%">65o</i><i class="d" style="background:var(--shove)" title="55 : All-in 100%">55</i><i class="" style="background:var(--fold)" title="54s : Fold 100%">54s</i><i class="" style="background:var(--fold)" title="53s : Fold 100%">53s</i><i class="" style="background:var(--fold)" title="52s : Fold 100%">52s</i><i class="" style="background:linear-gradient(90deg,var(--shove) 0% 45%,var(--raise) 45% 100%)" title="A4o : All-in 45%, Raise to 2 BB 55%">A4o</i><i class="" style="background:var(--fold)" title="K4o : Fold 100%">K4o</i><i class="" style="background:var(--fold)" title="Q4o : Fold 100%">Q4o</i><i class="" style="background:var(--fold)" title="J4o : Fold 100%">J4o</i><i class="" style="background:var(--fold)" title="T4o : Fold 100%">T4o</i><i class="" style="background:var(--fold)" title="94o : Fold 100%">94o</i><i class="" style="background:var(--fold)" title="84o : Fold 100%">84o</i><i class="" style="background:var(--fold)" title="74o : Fold 100%">74o</i><i class="" style="background:var(--fold)" title="64o : Fold 100%">64o</i><i class="" style="background:var(--fold)" title="54o : Fold 100%">54o</i><i class="d" style="background:var(--shove)" title="44 : All-in 100%">44</i><i class="" style="background:var(--fold)" title="43s : Fold 100%">43s</i><i class="" style="background:var(--fold)" title="42s : Fold 100%">42s</i><i class="" style="background:var(--raise)" title="A3o : Raise to 2 BB 100%">A3o</i><i class="" style="background:var(--fold)" title="K3o : Fold 100%">K3o</i><i class="" style="background:var(--fold)" title="Q3o : Fold 100%">Q3o</i><i class="" style="background:var(--fold)" title="J3o : Fold 100%">J3o</i><i class="" style="background:var(--fold)" title="T3o : Fold 100%">T3o</i><i class="" style="background:var(--fold)" title="93o : Fold 100%">93o</i><i class="" style="background:var(--fold)" title="83o : Fold 100%">83o</i><i class="" style="background:var(--fold)" title="73o : Fold 100%">73o</i><i class="" style="background:var(--fold)" title="63o : Fold 100%">63o</i><i class="" style="background:var(--fold)" title="53o : Fold 100%">53o</i><i class="" style="background:var(--fold)" title="43o : Fold 100%">43o</i><i class="d" style="background:var(--shove)" title="33 : All-in 100%">33</i><i class="" style="background:var(--fold)" title="32s : Fold 100%">32s</i><i class="" style="background:var(--raise)" title="A2o : Raise to 2 BB 100%">A2o</i><i class="" style="background:var(--fold)" title="K2o : Fold 100%">K2o</i><i class="" style="background:var(--fold)" title="Q2o : Fold 100%">Q2o</i><i class="" style="background:var(--fold)" title="J2o : Fold 100%">J2o</i><i class="" style="background:var(--fold)" title="T2o : Fold 100%">T2o</i><i class="" style="background:var(--fold)" title="92o : Fold 100%">92o</i><i class="" style="background:var(--fold)" title="82o : Fold 100%">82o</i><i class="" style="background:var(--fold)" title="72o : Fold 100%">72o</i><i class="" style="background:var(--fold)" title="62o : Fold 100%">62o</i><i class="" style="background:var(--fold)" title="52o : Fold 100%">52o</i><i class="" style="background:var(--fold)" title="42o : Fold 100%">42o</i><i class="" style="background:var(--fold)" title="32o : Fold 100%">32o</i><i class="d" style="background:var(--shove)" title="22 : All-in 100%">22</i></div><ul class="legend"><li><i style="background:var(--shove)"></i>All-in <b>18.1%</b></li><li><i style="background:var(--raise)"></i>Raise to 2 BB <b>20.6%</b></li><li><i style="background:var(--fold)"></i>Fold <b>61.3%</b></li></ul><p class="rnote">A cell split into several colours is a hand played in more than one way (mixed strategy). Percentages count the 1,326 starting combinations.</p></div><div><h2 style="margin-top:0">Key takeaways</h2><ul class="rkeys"><li>The button plays 38.7% of hands: 20.6% as a raise to 2 BB, 18.1% as a direct all-in.</li><li>The direct shove mostly goes to hands that dislike facing a reraise: small pairs (22 to 66), weak suited aces (A2s to A5s), suited connectors (JTs to 87s).</li><li>Very strong hands (88 to AA, AKs, AQs, KQs) raise to 2 BB to get paid, along with suited kings and a few offsuit hands (K8o, K7o, Q9o, A3o) that can be given up against a reraise. Offsuit AK is split between the two, slightly more often shoved.</li></ul><h2>Calculation assumptions</h2><ul class="rhyp"><li>Chip EV, with no payout structure. ICM is set in the software, with “Calculate my spot”.</li><li>Six players with equal stacks, table ante of about 1 BB in total.</li><li>Preflop calculation: play after the flop is estimated by a model, not solved.</li></ul></div></div><h2>The range as text</h2><dl class="rtxt"><dt>All-in · 18.1%</dt><dd>A9s (95%), A8s (32%), A7s (9%), A6s (8%), A5s, A4s, A3s, A2s, AKo (58%), K9s (85%), AQo (57%), KQo, QJs, QTs, Q9s, AJo (94%), KJo (89%), QJo (97%), JTs, J9s, J8s, ATo, JTo (41%), T9s, T8s, A9o, 98s, 97s, A8o, 87s, A7o, 77 (94%), 76s (39%), A6o (32%), 66, A5o, 55, A4o (45%), 44, 33, 22</dd><dt>Raise to 2 BB · 20.6%</dt><dd>AA, AKs, AQs, AJs, ATs, A9s (5%), A8s (68%), A7s (91%), A6s (92%), AKo (42%), KK, KQs, KJs, KTs, K9s (15%), K8s, K7s, K6s, K5s, K4s, K3s, K2s (5%), AQo (43%), QQ, Q8s, Q7s, Q6s (13%), AJo (6%), KJo (11%), QJo (3%), JJ, KTo, QTo, JTo (59%), TT, K9o, Q9o, J9o (50%), 99, K8o, Q8o (45%), 88, K7o, 77 (6%), A6o (68%), K6o, K5o (42%), A4o (55%), A3o, A2o</dd><dt>Fold · 61.3%</dt><dd>K2s (95%), Q6s (87%), Q5s, Q4s, Q3s, Q2s, J7s, J6s, J5s, J4s, J3s, J2s, T7s, T6s, T5s, T4s, T3s, T2s, J9o (50%), T9o, 96s, 95s, 94s, 93s, 92s, Q8o (55%), J8o, T8o, 98o, 86s, 85s, 84s, 83s, 82s, Q7o, J7o, T7o, 97o, 87o, 76s (61%), 75s, 74s, 73s, 72s, Q6o, J6o, T6o, 96o, 86o, 76o, 65s, 64s, 63s, 62s, K5o (58%), Q5o, J5o, T5o, 95o, 85o, 75o, 65o, 54s, 53s, 52s, K4o, Q4o, J4o, T4o, 94o, 84o, 74o, 64o, 54o, 43s, 42s, K3o, Q3o, J3o, T3o, 93o, 83o, 73o, 63o, 53o, 43o, 32s, K2o, Q2o, J2o, T2o, 92o, 82o, 72o, 62o, 52o, 42o, 32o</dd></dl><div class="rcta"><h2>Every spot, and your own hands</h2><p>These six charts are a sample. Solve It Poker covers every position and every depth, from 15 to 2 BB in Spins and from 100 to 10 BB in tournaments, and compares each of your hands with this calculation.</p><div class="cta"><a class="btn primary" href="/en/#tarif">Try it free for 7 days</a><a class="btn ghost" href="/en/#fonctions">See the software</a></div></div><h2>Other free ranges</h2><ul class="rlist"><li><a href="/en/ranges/spin-button-15bb/"><b>Button at 15 BB, 3-handed</b><span>Spin & Go and Expresso · 30.2% hands played</span></a></li><li><a href="/en/ranges/spin-small-blind-10bb/"><b>Small blind at 10 BB, heads-up</b><span>Spin & Go and Expresso · 78.1% hands played</span></a></li><li><a href="/en/ranges/spin-big-blind-call-shove-10bb/"><b>Big blind vs a shove, 10 BB</b><span>Spin & Go and Expresso · 37.8% hands played</span></a></li><li><a href="/en/ranges/tournament-utg-30bb/"><b>UTG at 30 BB, open</b><span>6-max tournament · 21.9% hands played</span></a></li><li><a href="/en/ranges/tournament-small-blind-10bb/"><b>Small blind at 10 BB, push or fold</b><span>6-max tournament · 75.9% hands played</span></a></li></ul></div></main>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="word" href="/en/"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
+<rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="130.0" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="353.4" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<circle cx="512" cy="512" r="227" fill="#2A1B5C"/>
+<circle cx="512" cy="512" r="174.0" fill="none" stroke="#FF6B57" stroke-width="62"/>
+<rect x="495.0" y="306.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(0.0 512.0 338.0)"/>
+<rect x="645.7" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(60.0 662.7 425.0)"/>
+<rect x="645.7" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(120.0 662.7 599.0)"/>
+<rect x="495.0" y="654.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(180.0 512.0 686.0)"/>
+<rect x="344.3" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(240.0 361.3 599.0)"/>
+<rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
+<circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
+<rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
+</svg><span>solve it <span class="accent">poker</span></span></a>
+      <ul>
+        <li><a href="/cgv.html">Terms of sale</a></li>
+        <li><a href="/en/ranges/">Free ranges</a></li><li><a href="/mentions-legales.html">Legal notice</a></li>
+        <li><a href="/cgv.html#art17">Personal data</a></li>
+        <li><a href="mailto:contact@solve-it-poker.com">Contact us</a></li>
+        <li><a href="/en/#resiliation">Cancel your subscription</a></li>
+      </ul>
+    </div>
+    <p class="legal">Solve It Poker is poker analysis and training software, for adults only. It does not run any game, take any wager or hold any funds, and it is not connected to any gaming operator. It is neither affiliated with nor endorsed by Winamax or PokerStars. “Winamax”, “Expresso”, “PokerStars” and “Spin &amp; Go” are trademarks of their respective owners. The software's results come from a model and guarantee no winnings. The screenshots use demonstration hands.</p>
+    <p class="prevention">If gambling is taking up too much room in your life, <a href="https://www.joueurs-info-service.fr/">joueurs-info-service.fr</a> (+33 9 74 75 13 13, French helpline, not a premium-rate number) answers free of charge and anonymously.</p>
+  </div>
+</footer></body>
+</html>

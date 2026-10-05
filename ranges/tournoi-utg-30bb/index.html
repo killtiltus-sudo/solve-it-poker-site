@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Range tournoi 6 joueurs : ouverture UTG à 30 BB — Solve It Poker</title>
+<meta name="description" content="La range d&#x27;ouverture UTG à 30 BB en tournoi 6 joueurs avec ante : quelles mains relancer, lesquelles coucher. Grille gratuite calculée par solveur.">
+<link rel="canonical" href="https://www.solve-it-poker.com/ranges/tournoi-utg-30bb/">
+<link rel="alternate" hreflang="fr" href="https://www.solve-it-poker.com/ranges/tournoi-utg-30bb/">
+<link rel="alternate" hreflang="en" href="https://www.solve-it-poker.com/en/ranges/tournament-utg-30bb/">
+<link rel="alternate" hreflang="es" href="https://www.solve-it-poker.com/es/ranges/torneo-utg-30bb/">
+<link rel="alternate" hreflang="x-default" href="https://www.solve-it-poker.com/ranges/tournoi-utg-30bb/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#2A1B5C">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Solve It Poker">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Range tournoi 6 joueurs : ouverture UTG à 30 BB">
+<meta property="og:description" content="La range d&#x27;ouverture UTG à 30 BB en tournoi 6 joueurs avec ante : quelles mains relancer, lesquelles coucher. Grille gratuite calculée par solveur.">
+<meta property="og:url" content="https://www.solve-it-poker.com/ranges/tournoi-utg-30bb/">
+<meta property="og:image" content="https://www.solve-it-poker.com/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/logo-icone.svg" type="image/svg+xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.solve-it-poker.com/"}, {"@type": "ListItem", "position": 2, "name": "Ranges gratuites", "item": "https://www.solve-it-poker.com/ranges/"}, {"@type": "ListItem", "position": 3, "name": "UTG à 30 BB, premier à parler", "item": "https://www.solve-it-poker.com/ranges/tournoi-utg-30bb/"}]}</script>
+<link rel="preload" href="/assets/fonts/BarlowSemiCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow";src:url("/assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("/assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("/assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{
+  /* Mêmes couleurs que l'application (thème clair). */
+  --bg:#EEF0EC; --bg2:#E6E9E5; --surface:#FFFFFF; --line:#D2D8D4; --ink:#15201C; --muted:#5B6863;
+  --brand:#B34279; --brand-hi:#247260; --pink:#B34279; --cream:#F7F8F6;
+  --shove:#B8322A; --raise:#E0962A; --limp:#2F8F7A; --call:#2E62B8; --fold:#DDE1DE;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --wrap:1160px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--cond);line-height:1.02;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2rem,4.2vw,3rem)}
+.lead{color:var(--muted);font-size:1.12rem;max-width:62ch}
+.todo{outline:1px dashed var(--pink);outline-offset:3px;border-radius:4px}
+
+/* bandeau de prévention */
+.warn{background:var(--cream);color:#120B2B;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.01em;text-align:center;padding:7px 14px;line-height:1.35}
+.warn a{text-decoration:underline}
+
+/* navigation */
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+.word{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:1.65rem;text-decoration:none;letter-spacing:-.015em}
+.word .accent{color:var(--brand)}
+.logo-ic{width:36px;height:36px;flex:none;border-radius:9px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+@media (max-width:820px){.nav ul{display:none}}
+.navr{display:flex;align-items:center;gap:14px}
+.resil-link{background:none;border:0;padding:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+.resil-link:hover{color:var(--ink)}
+@media (max-width:520px){.resil-link{font-size:.8rem;max-width:88px;text-align:right;line-height:1.2}.navr{gap:10px}.navr .btn.small{white-space:nowrap;padding:8px 12px}.word{font-size:1.4rem}.logo-ic{width:30px;height:30px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;border:1px solid transparent;cursor:pointer}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-hi)}
+.btn.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+.btn.ghost:hover{border-color:var(--muted)}
+.btn.small{padding:8px 16px;font-size:.95rem}
+
+/* héros */
+.hero{padding:64px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+.eyebrow{font-weight:600;font-style:italic;text-transform:lowercase;letter-spacing:.03em;color:var(--brand);margin:0 0 8px}
+.hero h1{font-size:clamp(2.7rem,6.4vw,4.9rem)}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.hero .lead{margin:20px 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.langpick{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+.langpick button{font:inherit;font-weight:600;font-size:.86rem;border:0;background:transparent;color:var(--muted);padding:7px 12px;cursor:pointer}
+.langpick button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+.meta{margin:18px 0 0;color:var(--muted);font-size:.95rem}
+
+/* démo */
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.demo-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px}
+.demo-head b{font-family:var(--cond);font-size:1.25rem}
+.demo-head span{color:var(--muted);font-size:.9rem}
+.mini{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
+.mini i{aspect-ratio:1/1;border-radius:3px;background:var(--fold);display:flex;align-items:center;justify-content:center;font-family:var(--cond);font-style:normal;font-weight:600;font-size:clamp(7px,1.05vw,12px);line-height:1;letter-spacing:.1px;overflow:hidden;color:#15201C}
+.mini i.a{color:#FFFFFF}.mini i.r{color:#15201C}.mini i.f{color:#5B6863}
+.slider{margin:16px 0 6px}
+.slider label{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px}
+.slider output{font-family:var(--cond);font-size:1.35rem;color:var(--brand)}
+input[type=range]{width:100%;accent-color:var(--brand)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 0;padding:0;list-style:none;font-size:.9rem;color:var(--muted)}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.legend b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.head{margin-bottom:38px}
+.head .lead{margin-top:14px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.feat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.feat h3{font-size:1.45rem;margin:10px 0 6px}
+.feat p{margin:0;color:var(--muted);font-size:.98rem}
+.chip{display:inline-block;width:26px;height:6px;border-radius:9px}
+
+.shot{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:40px;align-items:center;margin-bottom:64px}
+.shot:last-child{margin-bottom:0}
+.shot.rev{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.shot.rev .txt{order:2}
+@media (max-width:900px){.shot,.shot.rev{grid-template-columns:1fr}.shot.rev .txt{order:0}}
+.shot h3{font-size:clamp(1.7rem,3vw,2.2rem);margin-bottom:10px}
+.shot p{color:var(--muted);margin:0 0 10px}
+.frame{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 40px rgba(21,32,28,.14)}
+.frame.narrow{max-width:420px;margin:0 auto}
+
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;counter-increment:s}
+.steps li::before{content:counter(s);display:inline-flex;width:34px;height:34px;border-radius:50%;align-items:center;justify-content:center;background:var(--brand);color:#120B2B;font-weight:700;margin-bottom:10px}
+.steps b{display:block;font-family:var(--cond);font-size:1.3rem;margin-bottom:4px}
+.steps span{color:var(--muted)}
+
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.trust ul{margin:0;padding-left:18px;color:var(--muted)}
+.trust li{margin:6px 0}
+.trust h3{font-size:1.5rem;margin-bottom:10px}
+
+.plans{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:stretch}
+.price{display:flex;flex-direction:column}
+.price .btn{margin-top:auto}
+.incl{list-style:none;padding:0;margin:0 0 20px;text-align:left;color:var(--muted)}
+.incl li{padding:6px 0 6px 24px;border-top:1px solid var(--line);position:relative}
+.incl li::before{content:"";position:absolute;left:4px;top:13px;width:10px;height:6px;border-left:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg)}
+.billing{display:inline-flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:18px}
+.billing button{border:0;background:none;color:var(--muted);font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;cursor:pointer}
+.billing button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.billing span{color:var(--pink);font-size:.85em;margin-left:4px}
+.billing button[aria-pressed="true"] span{color:#C2367A}
+@media (max-width:1180px){.plans{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.plans{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
+.price{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 24px;text-align:center}
+.price.featured{border-color:var(--brand)}
+.badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);margin:0;background:var(--pink);color:#120B2B;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.plan-name{margin:0;font-weight:600;color:var(--muted)}
+.plan-sub{margin:0 0 20px;color:var(--muted)}
+.price .btn{width:100%}
+.amount span{font-size:1.2rem;color:var(--muted);font-weight:600;margin-left:4px}
+.included{max-width:620px;margin:28px auto 0;padding-left:20px;color:var(--muted);columns:2;column-gap:28px}
+@media (max-width:640px){.included{columns:1}}
+.included li{margin:6px 0;break-inside:avoid}
+.fine{text-align:center;color:var(--muted);font-size:.9rem;margin:18px 0 0}
+.price .amount{font-family:var(--cond);font-weight:700;font-size:3.4rem;margin:8px 0 2px}
+
+
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.08rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--brand);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--muted);margin:10px 0 0}
+
+dialog{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:0;width:min(480px,92vw)}
+dialog::backdrop{background:rgba(8,4,20,.7)}
+#resil-form{padding:24px}
+#resil-form h2{font-size:1.9rem;margin:2px 0 12px}
+.r-step{margin:0;color:var(--pink);font-weight:600;font-size:.9rem}
+#resil-form p{color:var(--muted);margin:0 0 12px}
+#resil-form label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:.92rem;margin-bottom:12px}
+#resil-form input{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.r-btns{display:flex;justify-content:flex-end;gap:10px;margin-top:8px;flex-wrap:wrap}
+.r-err{color:var(--pink)!important;font-weight:600}
+.r-sum{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0 0 12px}
+.r-sum dt{color:var(--muted)} .r-sum dd{margin:0;word-break:break-word}
+footer{border-top:1px solid var(--line);padding:40px 0 30px;color:var(--muted);font-size:.92rem}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:flex-start}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+.legal{margin-top:22px;font-size:.84rem;max-width:90ch}
+.prevention{margin-top:22px;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:14px 16px;color:var(--ink);font-weight:600;text-transform:uppercase;font-size:.84rem;line-height:1.45}
+.prevention small{display:block;font-size:.78rem;font-weight:600;margin-top:4px}
+
+/* ---- v5 : bandeau des nouveautés ---- */
+.news{border-bottom:1px solid var(--line);background:var(--surface)}
+.news .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:12px;padding-bottom:12px}
+.news-t{font-family:var(--cond);font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;background:var(--pink);color:#fff;border-radius:999px;padding:4px 11px}
+.news a{font-weight:600;font-size:.94rem;text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--bg)}
+.news a:hover{border-color:var(--brand);color:var(--brand-hi)}
+
+/* ---- fonctions regroupées par formule ---- */
+.fgroup{margin-top:38px}
+.fgroup:first-of-type{margin-top:0}
+.fgroup-t{display:flex;align-items:center;gap:10px;font-size:1.65rem;margin:0 0 14px}
+.subhead{font-size:clamp(1.6rem,3vw,2.1rem);margin:8px 0 30px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+.subhead:not(:first-of-type){margin-top:72px}
+.shot{scroll-margin-top:90px}
+.shot p.small{font-size:.92rem}
+
+/* ---- tarifs : étape 1, le jeu ; étape 2, la formule ---- */
+.step-t{display:flex;align-items:center;gap:12px;font-family:var(--cond);font-weight:700;font-size:1.55rem;margin:0 0 16px}
+.step-n{display:inline-flex;flex:none;width:36px;height:36px;border-radius:50%;align-items:center;justify-content:center;background:var(--ink);color:var(--bg);font-size:1.15rem}
+.gamepick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 44px}
+@media (max-width:760px){.gamepick{grid-template-columns:1fr}}
+.gamepick button{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;font:inherit;color:var(--ink);background:var(--surface);border:3px solid var(--line);border-radius:20px;padding:26px 18px 22px;cursor:pointer;transition:border-color .15s,box-shadow .15s,transform .15s,background .15s}
+.gamepick button:hover{border-color:var(--brand);transform:translateY(-2px)}
+.gamepick button b{font-family:var(--cond);font-size:2.2rem;line-height:1}
+.gamepick .gp-sub{color:var(--muted);font-size:.98rem;line-height:1.35}
+.gamepick button[aria-checked="true"]{border-color:var(--brand);background:color-mix(in srgb,var(--brand) 13%,var(--surface));box-shadow:0 12px 30px rgba(47,143,122,.28)}
+.gamepick button[aria-checked="true"] .gp-ic{background:var(--brand);color:#fff}
+.gp-check{position:absolute;top:12px;right:14px;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;display:none;align-items:center;justify-content:center}
+.gamepick button[aria-checked="true"] .gp-check{display:flex}
+.gp-ic{width:54px;height:54px;border-radius:14px;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin-bottom:6px;color:var(--brand)}
+.gp-ic svg{width:30px;height:30px}
+.gp-flag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;font-weight:700;font-size:.8rem;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.step-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}
+.step-row .step-t{margin:0}
+.step-row .billing{margin-top:0}
+.plans.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:980px){.plans.three{grid-template-columns:1fr;max-width:440px;margin:0 auto}}
+.plan-game{margin:4px 0 0;font-weight:600;color:var(--brand-hi);min-height:1.5em}
+.price .amount{transition:opacity .15s}
+.freeline{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 12px;margin:24px auto 0;padding:14px 18px;border:1px dashed var(--line);border-radius:14px;max-width:760px;text-align:center;color:var(--muted)}
+.freeline b{color:var(--ink)}
+/* petit écran : le bouton d'essai du bandeau passe dans le héros, pour que le lien de résiliation et la langue restent visibles */
+@media (max-width:520px){.navr .btn.small{display:none}.news a{font-size:.88rem;padding:4px 10px}}
+
+/* Navigation compacte sur petit écran : sous 820 px le menu disparaissait sans rien pour le remplacer,
+   et à 360 px le bouton de langue sortait de l'écran. */
+@media (max-width:820px){
+  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;gap:8px}
+  .nav nav{order:3;width:100%}
+  .nav ul{display:flex;gap:16px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav ul a{font-size:.9rem;white-space:nowrap}
+}
+@media (max-width:420px){
+  .navr{gap:6px}
+  /* le lien de resiliation reste visible : obligation d'acces permanent */
+  .resil-link{font-size:.74rem;padding:4px 7px}
+  .langpick button{padding:4px 7px;font-size:.78rem}
+  .nav .word span{font-size:1.2rem}
+}
+
+/* Message affiche quand aucun lien de paiement n'est configure (voir PAIEMENT dans scripts_v5.js). */
+.paiement-bientot{margin:8px 0 0;font-size:13px;line-height:1.35;color:var(--muted,#6b7280);text-align:center}
+
+/* Ligne d'aide du pied de page : plus de majuscules ni de cadre d'alerte, c'est une information, pas un avertissement reglementaire. */
+.prevention{margin-top:18px;border:0;background:none;padding:0;font-weight:400;text-transform:none;font-size:.82rem;line-height:1.5;color:var(--muted,#6b7280)}
+.prevention a{text-decoration:underline}
+
+.rpage{padding:34px 0 60px}
+.crumb{font-size:.9rem;color:var(--muted);margin:0 0 18px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--ink)}
+.rpage h1{font-size:clamp(2rem,4.6vw,3.2rem);margin:0 0 14px}
+.rpage h2{font-size:clamp(1.4rem,2.6vw,1.8rem);margin:36px 0 12px}
+.rlay{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:36px;align-items:start;margin-top:26px}
+@media (max-width:900px){.rlay{grid-template-columns:1fr}}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
+.rcard h2{margin:0 0 12px;font-size:1.15rem}
+.rg{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
+.rg i{aspect-ratio:1/1;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 clamp(.52rem,1.25vw,.8rem)/1 var(--cond);font-style:normal;color:var(--ink)}
+.rg i.d{color:#fff}
+.rnote{font-size:.85rem;color:var(--muted);margin:12px 0 0}
+.rkeys{margin:0;padding-left:1.2em}.rkeys li{margin:0 0 10px}
+.rhyp{margin:0;padding-left:1.2em;color:var(--muted)}.rhyp li{margin:0 0 6px}
+.rtxt dt{font-weight:600;margin-top:12px}.rtxt dd{margin:4px 0 0;color:var(--muted)}
+.rcta{background:var(--ink);color:var(--cream);border-radius:20px;padding:28px;margin-top:44px}
+.rcta h2{margin:0 0 10px;color:var(--cream)}.rcta p{margin:0 0 18px;color:color-mix(in srgb,var(--cream) 80%,transparent);max-width:62ch}
+.rcta .btn.ghost{color:var(--cream);border-color:color-mix(in srgb,var(--cream) 40%,transparent)}
+.rlist{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.rlist a{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.rlist a:hover{border-color:var(--muted)}
+.rlist b{display:block;font-family:var(--cond);font-size:1.12rem}
+.rlist span{color:var(--muted);font-size:.9rem}
+.langpick a{font-weight:600;font-size:.78rem;color:var(--muted);padding:4px 7px;text-decoration:none;display:inline-block}
+.langpick a[aria-current="true"]{background:var(--ink);color:var(--cream)}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap"><a class="word" href="/" aria-label="Solve It Poker"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
+<rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="130.0" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="353.4" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<circle cx="512" cy="512" r="227" fill="#2A1B5C"/>
+<circle cx="512" cy="512" r="174.0" fill="none" stroke="#FF6B57" stroke-width="62"/>
+<rect x="495.0" y="306.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(0.0 512.0 338.0)"/>
+<rect x="645.7" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(60.0 662.7 425.0)"/>
+<rect x="645.7" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(120.0 662.7 599.0)"/>
+<rect x="495.0" y="654.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(180.0 512.0 686.0)"/>
+<rect x="344.3" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(240.0 361.3 599.0)"/>
+<rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
+<circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
+<rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
+</svg><span>solve it <span class="accent">poker</span></span></a><nav aria-label="Navigation"><ul><li><a href="/ranges/">Ranges gratuites</a></li><li><a href="/#fonctions">Fonctions</a></li><li><a href="/#tarif">Tarifs</a></li></ul></nav><div class="navr"><a class="btn primary small" href="/#tarif">Essai gratuit</a><div class="langpick" role="group"><a href="/ranges/tournoi-utg-30bb/" hreflang="fr" lang="fr" aria-current="true">FR</a><a href="/en/ranges/tournament-utg-30bb/" hreflang="en" lang="en">EN</a><a href="/es/ranges/torneo-utg-30bb/" hreflang="es" lang="es">ES</a></div></div></div></header>
+<main class="rpage"><div class="wrap"><p class="crumb"><a href="/">Accueil</a> › <a href="/ranges/">Ranges gratuites</a> › UTG à 30 BB, ouverture</p><p class="eyebrow">range gratuite · Tournoi à 6 joueurs</p><h1>UTG à 30 BB, premier à parler</h1><p class="lead">Tournoi à 6 joueurs, 30 blindes, ante de table : tu es le premier à parler. Voici la range d&#x27;ouverture d&#x27;équilibre calculée par Solve It Poker.</p><div class="rlay"><div class="rcard"><h2>Grille de la range</h2><div class="rg" role="img" aria-label="Grille de la range"><i class="" style="background:var(--raise)" title="AA : Relance à 2,1 BB 100 %">AA</i><i class="" style="background:var(--raise)" title="AKs : Relance à 2,1 BB 100 %">AKs</i><i class="" style="background:var(--raise)" title="AQs : Relance à 2,1 BB 100 %">AQs</i><i class="" style="background:var(--raise)" title="AJs : Relance à 2,1 BB 100 %">AJs</i><i class="" style="background:var(--raise)" title="ATs : Relance à 2,1 BB 100 %">ATs</i><i class="" style="background:var(--raise)" title="A9s : Relance à 2,1 BB 100 %">A9s</i><i class="" style="background:var(--raise)" title="A8s : Relance à 2,1 BB 100 %">A8s</i><i class="" style="background:var(--raise)" title="A7s : Relance à 2,1 BB 100 %">A7s</i><i class="" style="background:var(--raise)" title="A6s : Relance à 2,1 BB 100 %">A6s</i><i class="" style="background:var(--raise)" title="A5s : Relance à 2,1 BB 100 %">A5s</i><i class="" style="background:var(--raise)" title="A4s : Relance à 2,1 BB 100 %">A4s</i><i class="" style="background:var(--raise)" title="A3s : Relance à 2,1 BB 100 %">A3s</i><i class="" style="background:var(--raise)" title="A2s : Relance à 2,1 BB 100 %">A2s</i><i class="" style="background:var(--raise)" title="AKo : Relance à 2,1 BB 100 %">AKo</i><i class="" style="background:var(--raise)" title="KK : Relance à 2,1 BB 100 %">KK</i><i class="" style="background:var(--raise)" title="KQs : Relance à 2,1 BB 100 %">KQs</i><i class="" style="background:var(--raise)" title="KJs : Relance à 2,1 BB 100 %">KJs</i><i class="" style="background:var(--raise)" title="KTs : Relance à 2,1 BB 100 %">KTs</i><i class="" style="background:var(--raise)" title="K9s : Relance à 2,1 BB 100 %">K9s</i><i class="" style="background:var(--raise)" title="K8s : Relance à 2,1 BB 100 %">K8s</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 94%,var(--fold) 94% 100%)" title="K7s : Relance à 2,1 BB 94 %, Se coucher 6 %">K7s</i><i class="" style="background:var(--fold)" title="K6s : Se coucher 100 %">K6s</i><i class="" style="background:var(--fold)" title="K5s : Se coucher 100 %">K5s</i><i class="" style="background:var(--fold)" title="K4s : Se coucher 100 %">K4s</i><i class="" style="background:var(--fold)" title="K3s : Se coucher 100 %">K3s</i><i class="" style="background:var(--fold)" title="K2s : Se coucher 100 %">K2s</i><i class="" style="background:var(--raise)" title="AQo : Relance à 2,1 BB 100 %">AQo</i><i class="" style="background:var(--raise)" title="KQo : Relance à 2,1 BB 100 %">KQo</i><i class="" style="background:var(--raise)" title="QQ : Relance à 2,1 BB 100 %">QQ</i><i class="" style="background:var(--raise)" title="QJs : Relance à 2,1 BB 100 %">QJs</i><i class="" style="background:var(--raise)" title="QTs : Relance à 2,1 BB 100 %">QTs</i><i class="" style="background:var(--raise)" title="Q9s : Relance à 2,1 BB 100 %">Q9s</i><i class="" style="background:var(--fold)" title="Q8s : Se coucher 100 %">Q8s</i><i class="" style="background:var(--fold)" title="Q7s : Se coucher 100 %">Q7s</i><i class="" style="background:var(--fold)" title="Q6s : Se coucher 100 %">Q6s</i><i class="" style="background:var(--fold)" title="Q5s : Se coucher 100 %">Q5s</i><i class="" style="background:var(--fold)" title="Q4s : Se coucher 100 %">Q4s</i><i class="" style="background:var(--fold)" title="Q3s : Se coucher 100 %">Q3s</i><i class="" style="background:var(--fold)" title="Q2s : Se coucher 100 %">Q2s</i><i class="" style="background:var(--raise)" title="AJo : Relance à 2,1 BB 100 %">AJo</i><i class="" style="background:var(--raise)" title="KJo : Relance à 2,1 BB 100 %">KJo</i><i class="" style="background:var(--raise)" title="QJo : Relance à 2,1 BB 100 %">QJo</i><i class="" style="background:var(--raise)" title="JJ : Relance à 2,1 BB 100 %">JJ</i><i class="" style="background:var(--raise)" title="JTs : Relance à 2,1 BB 100 %">JTs</i><i class="" style="background:var(--fold)" title="J9s : Se coucher 100 %">J9s</i><i class="" style="background:var(--fold)" title="J8s : Se coucher 100 %">J8s</i><i class="" style="background:var(--fold)" title="J7s : Se coucher 100 %">J7s</i><i class="" style="background:var(--fold)" title="J6s : Se coucher 100 %">J6s</i><i class="" style="background:var(--fold)" title="J5s : Se coucher 100 %">J5s</i><i class="" style="background:var(--fold)" title="J4s : Se coucher 100 %">J4s</i><i class="" style="background:var(--fold)" title="J3s : Se coucher 100 %">J3s</i><i class="" style="background:var(--fold)" title="J2s : Se coucher 100 %">J2s</i><i class="" style="background:var(--raise)" title="ATo : Relance à 2,1 BB 100 %">ATo</i><i class="" style="background:var(--raise)" title="KTo : Relance à 2,1 BB 100 %">KTo</i><i class="" style="background:linear-gradient(90deg,var(--raise) 0% 35%,var(--fold) 35% 100%)" title="QTo : Relance à 2,1 BB 35 %, Se coucher 65 %">QTo</i><i class="" style="background:var(--fold)" title="JTo : Se coucher 100 %">JTo</i><i class="" style="background:var(--raise)" title="TT : Relance à 2,1 BB 100 %">TT</i><i class="" style="background:var(--fold)" title="T9s : Se coucher 100 %">T9s</i><i class="" style="background:var(--fold)" title="T8s : Se coucher 100 %">T8s</i><i class="" style="background:var(--fold)" title="T7s : Se coucher 100 %">T7s</i><i class="" style="background:var(--fold)" title="T6s : Se coucher 100 %">T6s</i><i class="" style="background:var(--fold)" title="T5s : Se coucher 100 %">T5s</i><i class="" style="background:var(--fold)" title="T4s : Se coucher 100 %">T4s</i><i class="" style="background:var(--fold)" title="T3s : Se coucher 100 %">T3s</i><i class="" style="background:var(--fold)" title="T2s : Se coucher 100 %">T2s</i><i class="" style="background:var(--raise)" title="A9o : Relance à 2,1 BB 100 %">A9o</i><i class="" style="background:var(--fold)" title="K9o : Se coucher 100 %">K9o</i><i class="" style="background:var(--fold)" title="Q9o : Se coucher 100 %">Q9o</i><i class="" style="background:var(--fold)" title="J9o : Se coucher 100 %">J9o</i><i class="" style="background:var(--fold)" title="T9o : Se coucher 100 %">T9o</i><i class="" style="background:var(--raise)" title="99 : Relance à 2,1 BB 100 %">99</i><i class="" style="background:var(--fold)" title="98s : Se coucher 100 %">98s</i><i class="" style="background:var(--fold)" title="97s : Se coucher 100 %">97s</i><i class="" style="background:var(--fold)" title="96s : Se coucher 100 %">96s</i><i class="" style="background:var(--fold)" title="95s : Se coucher 100 %">95s</i><i class="" style="background:var(--fold)" title="94s : Se coucher 100 %">94s</i><i class="" style="background:var(--fold)" title="93s : Se coucher 100 %">93s</i><i class="" style="background:var(--fold)" title="92s : Se coucher 100 %">92s</i><i class="" style="background:var(--raise)" title="A8o : Relance à 2,1 BB 100 %">A8o</i><i class="" style="background:var(--fold)" title="K8o : Se coucher 100 %">K8o</i><i class="" style="background:var(--fold)" title="Q8o : Se coucher 100 %">Q8o</i><i class="" style="background:var(--fold)" title="J8o : Se coucher 100 %">J8o</i><i class="" style="background:var(--fold)" title="T8o : Se coucher 100 %">T8o</i><i class="" style="background:var(--fold)" title="98o : Se coucher 100 %">98o</i><i class="" style="background:var(--raise)" title="88 : Relance à 2,1 BB 100 %">88</i><i class="" style="background:var(--fold)" title="87s : Se coucher 100 %">87s</i><i class="" style="background:var(--fold)" title="86s : Se coucher 100 %">86s</i><i class="" style="background:var(--fold)" title="85s : Se coucher 100 %">85s</i><i class="" style="background:var(--fold)" title="84s : Se coucher 100 %">84s</i><i class="" style="background:var(--fold)" title="83s : Se coucher 100 %">83s</i><i class="" style="background:var(--fold)" title="82s : Se coucher 100 %">82s</i><i class="" style="background:var(--raise)" title="A7o : Relance à 2,1 BB 100 %">A7o</i><i class="" style="background:var(--fold)" title="K7o : Se coucher 100 %">K7o</i><i class="" style="background:var(--fold)" title="Q7o : Se coucher 100 %">Q7o</i><i class="" style="background:var(--fold)" title="J7o : Se coucher 100 %">J7o</i><i class="" style="background:var(--fold)" title="T7o : Se coucher 100 %">T7o</i><i class="" style="background:var(--fold)" title="97o : Se coucher 100 %">97o</i><i class="" style="background:var(--fold)" title="87o : Se coucher 100 %">87o</i><i class="" style="background:var(--raise)" title="77 : Relance à 2,1 BB 100 %">77</i><i class="" style="background:var(--fold)" title="76s : Se coucher 100 %">76s</i><i class="" style="background:var(--fold)" title="75s : Se coucher 100 %">75s</i><i class="" style="background:var(--fold)" title="74s : Se coucher 100 %">74s</i><i class="" style="background:var(--fold)" title="73s : Se coucher 100 %">73s</i><i class="" style="background:var(--fold)" title="72s : Se coucher 100 %">72s</i><i class="" style="background:var(--fold)" title="A6o : Se coucher 100 %">A6o</i><i class="" style="background:var(--fold)" title="K6o : Se coucher 100 %">K6o</i><i class="" style="background:var(--fold)" title="Q6o : Se coucher 100 %">Q6o</i><i class="" style="background:var(--fold)" title="J6o : Se coucher 100 %">J6o</i><i class="" style="background:var(--fold)" title="T6o : Se coucher 100 %">T6o</i><i class="" style="background:var(--fold)" title="96o : Se coucher 100 %">96o</i><i class="" style="background:var(--fold)" title="86o : Se coucher 100 %">86o</i><i class="" style="background:var(--fold)" title="76o : Se coucher 100 %">76o</i><i class="" style="background:var(--raise)" title="66 : Relance à 2,1 BB 100 %">66</i><i class="" style="background:var(--fold)" title="65s : Se coucher 100 %">65s</i><i class="" style="background:var(--fold)" title="64s : Se coucher 100 %">64s</i><i class="" style="background:var(--fold)" title="63s : Se coucher 100 %">63s</i><i class="" style="background:var(--fold)" title="62s : Se coucher 100 %">62s</i><i class="" style="background:var(--fold)" title="A5o : Se coucher 100 %">A5o</i><i class="" style="background:var(--fold)" title="K5o : Se coucher 100 %">K5o</i><i class="" style="background:var(--fold)" title="Q5o : Se coucher 100 %">Q5o</i><i class="" style="background:var(--fold)" title="J5o : Se coucher 100 %">J5o</i><i class="" style="background:var(--fold)" title="T5o : Se coucher 100 %">T5o</i><i class="" style="background:var(--fold)" title="95o : Se coucher 100 %">95o</i><i class="" style="background:var(--fold)" title="85o : Se coucher 100 %">85o</i><i class="" style="background:var(--fold)" title="75o : Se coucher 100 %">75o</i><i class="" style="background:var(--fold)" title="65o : Se coucher 100 %">65o</i><i class="" style="background:var(--raise)" title="55 : Relance à 2,1 BB 100 %">55</i><i class="" style="background:var(--fold)" title="54s : Se coucher 100 %">54s</i><i class="" style="background:var(--fold)" title="53s : Se coucher 100 %">53s</i><i class="" style="background:var(--fold)" title="52s : Se coucher 100 %">52s</i><i class="" style="background:var(--fold)" title="A4o : Se coucher 100 %">A4o</i><i class="" style="background:var(--fold)" title="K4o : Se coucher 100 %">K4o</i><i class="" style="background:var(--fold)" title="Q4o : Se coucher 100 %">Q4o</i><i class="" style="background:var(--fold)" title="J4o : Se coucher 100 %">J4o</i><i class="" style="background:var(--fold)" title="T4o : Se coucher 100 %">T4o</i><i class="" style="background:var(--fold)" title="94o : Se coucher 100 %">94o</i><i class="" style="background:var(--fold)" title="84o : Se coucher 100 %">84o</i><i class="" style="background:var(--fold)" title="74o : Se coucher 100 %">74o</i><i class="" style="background:var(--fold)" title="64o : Se coucher 100 %">64o</i><i class="" style="background:var(--fold)" title="54o : Se coucher 100 %">54o</i><i class="" style="background:var(--raise)" title="44 : Relance à 2,1 BB 100 %">44</i><i class="" style="background:var(--fold)" title="43s : Se coucher 100 %">43s</i><i class="" style="background:var(--fold)" title="42s : Se coucher 100 %">42s</i><i class="" style="background:var(--fold)" title="A3o : Se coucher 100 %">A3o</i><i class="" style="background:var(--fold)" title="K3o : Se coucher 100 %">K3o</i><i class="" style="background:var(--fold)" title="Q3o : Se coucher 100 %">Q3o</i><i class="" style="background:var(--fold)" title="J3o : Se coucher 100 %">J3o</i><i class="" style="background:var(--fold)" title="T3o : Se coucher 100 %">T3o</i><i class="" style="background:var(--fold)" title="93o : Se coucher 100 %">93o</i><i class="" style="background:var(--fold)" title="83o : Se coucher 100 %">83o</i><i class="" style="background:var(--fold)" title="73o : Se coucher 100 %">73o</i><i class="" style="background:var(--fold)" title="63o : Se coucher 100 %">63o</i><i class="" style="background:var(--fold)" title="53o : Se coucher 100 %">53o</i><i class="" style="background:var(--fold)" title="43o : Se coucher 100 %">43o</i><i class="" style="background:var(--fold)" title="33 : Se coucher 100 %">33</i><i class="" style="background:var(--fold)" title="32s : Se coucher 100 %">32s</i><i class="" style="background:var(--fold)" title="A2o : Se coucher 100 %">A2o</i><i class="" style="background:var(--fold)" title="K2o : Se coucher 100 %">K2o</i><i class="" style="background:var(--fold)" title="Q2o : Se coucher 100 %">Q2o</i><i class="" style="background:var(--fold)" title="J2o : Se coucher 100 %">J2o</i><i class="" style="background:var(--fold)" title="T2o : Se coucher 100 %">T2o</i><i class="" style="background:var(--fold)" title="92o : Se coucher 100 %">92o</i><i class="" style="background:var(--fold)" title="82o : Se coucher 100 %">82o</i><i class="" style="background:var(--fold)" title="72o : Se coucher 100 %">72o</i><i class="" style="background:var(--fold)" title="62o : Se coucher 100 %">62o</i><i class="" style="background:var(--fold)" title="52o : Se coucher 100 %">52o</i><i class="" style="background:var(--fold)" title="42o : Se coucher 100 %">42o</i><i class="" style="background:var(--fold)" title="32o : Se coucher 100 %">32o</i><i class="" style="background:var(--fold)" title="22 : Se coucher 100 %">22</i></div><ul class="legend"><li><i style="background:var(--raise)"></i>Relance à 2,1 BB <b>21,9 %</b></li><li><i style="background:var(--fold)"></i>Se coucher <b>78,1 %</b></li></ul><p class="rnote">Une case partagée en plusieurs couleurs est une main jouée de plusieurs façons (stratégie mixte). Les pourcentages comptent les 1 326 combinaisons de départ.</p></div><div><h2 style="margin-top:0">Ce qu'il faut retenir</h2><ul class="rkeys"><li>UTG ouvre 21,9 % des mains, toujours par une relance à 2,1 BB : ni limp, ni tapis direct.</li><li>La range : paires de 44 à AA, tous les as assortis, as dépareillés A7o et mieux, rois assortis K8s et mieux (K7s presque toujours), KTo et mieux, QJo, Q9s et mieux, JTs. QTo une fois sur trois.</li><li>Les paires 22 et 33 et les connecteurs assortis comme T9s ou 98s se couchent : avec cinq joueurs derrière, ils n&#x27;ont pas assez de valeur.</li></ul><h2>Hypothèses du calcul</h2><ul class="rhyp"><li>Calcul en jetons, sans structure de gains. L&#x27;ICM se règle dans l&#x27;application, avec « Calculer mon spot ».</li><li>Six joueurs à tapis égaux, ante de table d&#x27;environ 1 BB au total.</li><li>Calcul préflop : le jeu après le flop est estimé par un modèle, pas résolu.</li></ul></div></div><h2>La range en texte</h2><dl class="rtxt"><dt>Relance à 2,1 BB · 21,9 %</dt><dd>AA, AKs, AQs, AJs, ATs, A9s, A8s, A7s, A6s, A5s, A4s, A3s, A2s, AKo, KK, KQs, KJs, KTs, K9s, K8s, K7s (94 %), AQo, KQo, QQ, QJs, QTs, Q9s, AJo, KJo, QJo, JJ, JTs, ATo, KTo, QTo (35 %), TT, A9o, 99, A8o, 88, A7o, 77, 66, 55, 44</dd><dt>Se coucher · 78,1 %</dt><dd>K7s (6 %), K6s, K5s, K4s, K3s, K2s, Q8s, Q7s, Q6s, Q5s, Q4s, Q3s, Q2s, J9s, J8s, J7s, J6s, J5s, J4s, J3s, J2s, QTo (65 %), JTo, T9s, T8s, T7s, T6s, T5s, T4s, T3s, T2s, K9o, Q9o, J9o, T9o, 98s, 97s, 96s, 95s, 94s, 93s, 92s, K8o, Q8o, J8o, T8o, 98o, 87s, 86s, 85s, 84s, 83s, 82s, K7o, Q7o, J7o, T7o, 97o, 87o, 76s, 75s, 74s, 73s, 72s, A6o, K6o, Q6o, J6o, T6o, 96o, 86o, 76o, 65s, 64s, 63s, 62s, A5o, K5o, Q5o, J5o, T5o, 95o, 85o, 75o, 65o, 54s, 53s, 52s, A4o, K4o, Q4o, J4o, T4o, 94o, 84o, 74o, 64o, 54o, 43s, 42s, A3o, K3o, Q3o, J3o, T3o, 93o, 83o, 73o, 63o, 53o, 43o, 33, 32s, A2o, K2o, Q2o, J2o, T2o, 92o, 82o, 72o, 62o, 52o, 42o, 32o, 22</dd></dl><div class="rcta"><h2>Toutes les situations, et tes propres mains</h2><p>Ces six grilles sont un échantillon. Solve It Poker contient toutes les positions et toutes les profondeurs, de 15 à 2 BB en Spin et de 100 à 10 BB en tournoi, et compare chacune de tes mains à ce calcul.</p><div class="cta"><a class="btn primary" href="/#tarif">Essayer 7 jours gratuitement</a><a class="btn ghost" href="/#fonctions">Voir le logiciel</a></div></div><h2>Les autres ranges gratuites</h2><ul class="rlist"><li><a href="/ranges/spin-bouton-15bb/"><b>Bouton à 15 BB, 3 joueurs</b><span>Spin et Expresso · 30,2 % mains jouées</span></a></li><li><a href="/ranges/spin-small-blind-10bb/"><b>Small blind à 10 BB, tête-à-tête</b><span>Spin et Expresso · 78,1 % mains jouées</span></a></li><li><a href="/ranges/spin-big-blind-face-tapis-10bb/"><b>Big blind face à un tapis, 10 BB</b><span>Spin et Expresso · 37,8 % mains jouées</span></a></li><li><a href="/ranges/tournoi-bouton-20bb/"><b>Bouton à 20 BB</b><span>Tournoi à 6 joueurs · 38,7 % mains jouées</span></a></li><li><a href="/ranges/tournoi-small-blind-10bb/"><b>Small blind à 10 BB, push or fold</b><span>Tournoi à 6 joueurs · 75,9 % mains jouées</span></a></li></ul></div></main>
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="word" href="/"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
+<rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="130.0" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="353.4" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<circle cx="512" cy="512" r="227" fill="#2A1B5C"/>
+<circle cx="512" cy="512" r="174.0" fill="none" stroke="#FF6B57" stroke-width="62"/>
+<rect x="495.0" y="306.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(0.0 512.0 338.0)"/>
+<rect x="645.7" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(60.0 662.7 425.0)"/>
+<rect x="645.7" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(120.0 662.7 599.0)"/>
+<rect x="495.0" y="654.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(180.0 512.0 686.0)"/>
+<rect x="344.3" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(240.0 361.3 599.0)"/>
+<rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
+<circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
+<rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
+</svg><span>solve it <span class="accent">poker</span></span></a>
+      <ul>
+        <li><a href="/cgv.html">Conditions générales de vente</a></li>
+        <li><a href="/ranges/">Ranges gratuites</a></li><li><a href="/mentions-legales.html">Mentions légales</a></li>
+        <li><a href="/cgv.html#art17">Données personnelles</a></li>
+        <li><a href="mailto:contact@solve-it-poker.com">Nous écrire</a></li>
+        <li><a href="/#resiliation">Résilier votre contrat</a></li>
+      </ul>
+    </div>
+    <p class="legal">Solve It Poker est un logiciel d'analyse et d'entraînement au poker, réservé aux personnes majeures. Il n'organise aucune partie, n'accepte aucune mise, ne détient aucun fonds et n'est lié à aucun opérateur de jeu. Il n'est ni affilié à Winamax ou à PokerStars, ni approuvé par eux. « Winamax », « Expresso », « PokerStars » et « Spin &amp; Go » sont des marques de leurs propriétaires respectifs. Les résultats du logiciel reposent sur un modèle et ne garantissent aucun gain. Les captures d'écran utilisent des mains de démonstration.</p>
+    <p class="prevention">Si le jeu prend trop de place dans ta vie, <a href="https://www.joueurs-info-service.fr/">joueurs-info-service.fr</a> (09 74 75 13 13, appel non surtaxé) répond gratuitement et anonymement.</p>
+  </div>
+</footer></body>
+</html>
