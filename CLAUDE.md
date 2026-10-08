@@ -25,6 +25,12 @@ Ce fichier est chargé à chaque session : il reste court. Lis le reste seulemen
 - Pour l'audit, lire d'abord la synthèse au lieu des 6 documents (≈ 120 Ko au total) : voir ci-dessous.
 - Préférer Grep ciblé et lectures partielles (`offset`/`limit`) ; ne lancer des sous-agents que si le porteur le demande.
 
+## Application de bureau (lecture seule)
+- Son code source est chez le porteur, pas sur GitHub : les releases de ce dépôt ne contiennent que les binaires (zip Mac et Windows). Toute modification de l'app se fait dans les sources du porteur.
+- Pour lire le code publié : `python3 outils/extraire-app.py -d <dossier hors dépôt>` (télécharge la dernière release Windows et extrait `app.asar` ; `-t v0.35.0` pour une autre version).
+- Fichiers utiles : `asar/main.js` (licences, mises à jour, historiques, HUD, OCR) ; `asar/app/index.html` (interface, 13,5 Mo) ; moteur dans `app.asar.unpacked/native/engine/solver-core.js`.
+- **Ne jamais lire `asar/app/index.html` en entier** : lignes 3605-3608 = données de ranges (`DATA`, `DATAJ`, `DATAM` 12 Mo, `ExpressoSolver.init`). Utiliser `python3 outils/vue-index.py -f <dossier>/asar/app/index.html -g "motif"` (≈ 670 Ko au lieu de 13,5 Mo).
+
 ## Audit d'octobre 2026 (`docs/audit-range-expresso/`)
 | Fichier | Taille | Contenu | Sections (ligne) |
 |---|---|---|---|
