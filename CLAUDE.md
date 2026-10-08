@@ -10,11 +10,12 @@ Ce fichier est chargé à chaque session : il reste court. Lis le reste seulemen
 
 ## Ce dépôt
 - Site statique (GitHub Pages, www.solve-it-poker.com) : `index.html`, `cgv.html`, `mentions-legales.html`, `fonts/`, flux de mise à jour (`version.json`, `maj-mac-*.json`). Le code de l'application de bureau (Electron) **n'est pas ici**.
-- `index.html` est **généré hors du dépôt** (`scripts_v5.js` chez le porteur) puis déposé à la main : une modification faite ici est écrasée au prochain dépôt si elle n'est pas reportée dans le générateur. Le signaler à chaque changement.
+- `index.html` était **généré hors du dépôt** (`scripts_v5.js` chez le porteur) puis déposé à la main. Depuis le 8 octobre 2026, la version de référence est celle du dépôt (images et polices sorties dans des fichiers) : un nouvel envoi depuis `scripts_v5.js` écraserait ces changements.
 
 ## Économiser les jetons (important)
-- **Ne jamais lire `index.html` en entier** avec Read ni `cat` : 3,2 Mo dont 2,8 Mo d'images et de polices en base64 sur des lignes géantes (lignes 17-21, 437-519 : jusqu'à 386 000 caractères ; ligne 844 `DEMO` ; ligne 884 `I18N`, 43 000 caractères).
-- Utiliser `python3 outils/vue-index.py` (≈ 75 Ko, numéros de ligne d'origine) :
+- Les captures sont dans `images/*.webp` et les polices dans `fonts/` : `index.html` ne fait plus que 132 Ko. **Si un `index.html` réapparaît avec des images en base64 (`data:image/webp;base64`), c'est qu'il a été régénéré par l'ancien générateur** : le signaler au porteur avant toute autre chose.
+- Ne pas lire `index.html` en entier : deux lignes restent très longues (ligne 844 `DEMO`, 12 000 caractères ; ligne 884 `I18N`, 43 000 caractères).
+- Utiliser `python3 outils/vue-index.py` (numéros de ligne d'origine, lignes longues tronquées, base64 éventuel masqué) :
   - `python3 outils/vue-index.py 343 420` : une plage de lignes ;
   - `python3 outils/vue-index.py -g "tarif|PAIEMENT"` : lignes contenant un motif ;
   - `-f cgv.html` pour une autre page, `-l 2000` pour voir plus loin dans une ligne longue.

@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Vue économe de index.html (et des autres pages) pour Claude Code et les humains.
 
-index.html pèse ~3,2 Mo, dont ~2,8 Mo d'images et de polices en base64 sur
-quelques lignes géantes. Ce script les remplace par <B64:…Ko> et tronque les
-lignes trop longues, en gardant les numéros de ligne d'origine.
+Tronque les lignes trop longues (DEMO, I18N) et remplace tout base64 restant
+par <B64:…Ko>, en gardant les numéros de ligne d'origine.
 
 Exemples :
-  python3 outils/vue-index.py                      # tout le fichier, allégé (~70 Ko)
+  python3 outils/vue-index.py                      # tout le fichier, allégé
   python3 outils/vue-index.py 560 620              # lignes 560 à 620
   python3 outils/vue-index.py -g "PAIEMENT|RESIL"  # lignes qui contiennent le motif
   python3 outils/vue-index.py -f cgv.html 1 40     # autre fichier
