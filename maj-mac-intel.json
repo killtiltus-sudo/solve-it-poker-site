@@ -1,13 +1,13 @@
 {
-  "currentRelease": "0.38.4",
+  "currentRelease": "0.38.5",
   "releases": [
     {
-      "version": "0.38.4",
+      "version": "0.38.5",
       "updateTo": {
-        "version": "0.38.4",
-        "name": "Solve It Poker 0.38.4",
-        "notes": "En Spin à 3 joueurs (13 à 25 BB), la relance de la SB grandit avec le tapis, plus proche des grilles de référence ; bibliothèques de tournoi recalculées à l'ante de 0,75 BB (6 et 5 joueurs) ; profils d'adversaires de tournoi calibrés sur des mains réelles ; table réduite et repliable ; rentabilité affichée dans chaque case de la grille ; « Calculer mon spot » s'ouvre en jetons ; le solveur se verrouille dès qu'un logiciel de room est ouvert ; HUD caché quand la room n'est plus au premier plan ; une table ne reste plus bloquée sous le HUD ; plus d'ancien affichage à l'ouverture ; sur Mac, la fenêtre se rouvre depuis le Dock après avoir été fermée.",
-        "pub_date": "2026-10-16T00:00:00+00:00",
+        "version": "0.38.5",
+        "name": "Solve It Poker 0.38.5",
+        "notes": "Tournois à 8 et 7 joueurs : bibliothèque de 100 à 2 BB (ante de 0,12 BB par joueur, ouverture à 2,2 BB dès 40 BB) ; cash game en tête-à-tête : bibliothèque de 40 à 200 BB ; le tracker juge les mains des tables de 7 et 8 joueurs en tournoi et du tête-à-tête en cash ; entraînement à 8 et 7 joueurs, et en tête-à-tête en cash.",
+        "pub_date": "2026-10-18T00:00:00+00:00",
         "url": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Mac.zip"
       }
     }
