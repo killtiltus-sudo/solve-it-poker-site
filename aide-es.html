@@ -5,13 +5,173 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ayuda e instalación — Solve It Poker</title>
 <meta name="description" content="Instala Solve It Poker en Mac y Windows, encuentra tus manos y haz funcionar el HUD.">
-<link rel="alternate" hreflang="fr" href="aide.html">
-<link rel="alternate" hreflang="en" href="aide-en.html">
-<link rel="alternate" hreflang="es" href="aide-es.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<link rel="canonical" href="https://www.solve-it-poker.com/aide-es.html">
+<link rel="alternate" hreflang="fr" href="https://www.solve-it-poker.com/aide.html">
+<link rel="alternate" hreflang="en" href="https://www.solve-it-poker.com/aide-en.html">
+<link rel="alternate" hreflang="es" href="https://www.solve-it-poker.com/aide-es.html">
+<link rel="alternate" hreflang="x-default" href="https://www.solve-it-poker.com/aide.html">
+<link rel="icon" href="assets/logo-icone.svg" type="image/svg+xml">
+<!-- Mesure d'audience sans cookie — DÉSACTIVÉE (15/10/2026). Trois outils possibles, sans cookie ni
+     consentement RGPD d'après leurs propres descriptions (prix et conditions à vérifier au moment du choix) :
+     Plausible (payant, hébergé en Europe), GoatCounter (gratuit pour un petit site), Cloudflare Web Analytics
+     (gratuit). Pour activer Plausible : retirer ce commentaire autour de la balise script, mettre le domaine,
+     et ajouter la mention dans la politique de confidentialité (lot Juridique). Exemple :
+<script defer data-domain="www.solve-it-poker.com" src="https://plausible.io/js/script.js"></script>
+     GoatCounter : <script data-goatcounter="https://VOTRE-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 <style>
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+
+:root{
+  
+  --bg:#EEF0EC; --bg2:#E6E9E5; --surface:#FFFFFF; --line:#D2D8D4; --ink:#15201C; --muted:#5B6863;
+  --brand:#B34279; --brand-hi:#247260; --pink:#B34279; --cream:#F7F8F6;
+  --shove:#B8322A; --raise:#E0962A; --limp:#2F8F7A; --call:#2E62B8; --fold:#DDE1DE;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;
+  --wrap:1160px;
+  color-scheme:light;
+}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 22px}
+
+
+
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:18px}
+
+.word{display:inline-flex;align-items:center;gap:10px;font-family:var(--cond);font-weight:700;font-size:1.65rem;text-decoration:none;letter-spacing:-.015em}
+
+.word .accent{color:var(--brand)}
+
+.logo-ic{width:36px;height:36px;flex:none;border-radius:9px}
+
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+
+.nav ul a:hover{color:var(--ink)}
+@media (max-width:820px){.nav ul{display:none}}
+
+.navr{display:flex;align-items:center;gap:14px}
+
+.resil-link{background:none;border:0;padding:0;font:inherit;font-size:.9rem;color:var(--muted);text-decoration:underline;cursor:pointer}
+
+.resil-link:hover{color:var(--ink)}
+@media (max-width:520px){.resil-link{font-size:.8rem;max-width:88px;text-align:right;line-height:1.2}
+.navr{gap:10px}
+.navr .btn.small{white-space:nowrap;padding:8px 12px}
+.word{font-size:1.4rem}
+.logo-ic{width:30px;height:30px}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:600;text-decoration:none;border-radius:999px;padding:12px 22px;border:1px solid transparent;cursor:pointer}
+
+.btn.primary{background:var(--brand);color:#fff}
+
+.btn.primary:hover{background:var(--brand-hi)}
+
+.btn.ghost{border-color:var(--line);color:var(--ink);background:transparent}
+
+.btn.ghost:hover{border-color:var(--muted)}
+
+.btn.small{padding:8px 16px;font-size:.95rem}
+
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:center}
+@media (max-width:920px){.hero .wrap{grid-template-columns:1fr}}
+
+.langpick{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface)}
+
+.langpick button{font:inherit;font-weight:600;font-size:.86rem;border:0;background:transparent;color:var(--muted);padding:7px 12px;cursor:pointer}
+
+.langpick button[aria-pressed="true"]{background:var(--ink);color:var(--cream)}
+
+.news .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;padding-top:12px;padding-bottom:12px}
+@media (max-width:520px){.navr .btn.small{display:none}}
+@media (max-width:820px){
+  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;gap:8px}
+
+  .nav nav{order:3;width:100%}
+
+  .nav ul{display:flex;gap:16px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
+
+  .nav ul::-webkit-scrollbar{display:none}
+
+  .nav ul a{font-size:.9rem;white-space:nowrap}}
+@media (max-width:420px){
+  .navr{gap:6px}
+
+  
+  .resil-link{font-size:.74rem;padding:4px 7px}
+
+  .langpick button{padding:4px 7px;font-size:.78rem}
+
+  .nav .word span{font-size:1.2rem}}
+
+
+
+:root{--sel:#2A1B5C;--on-sel:#FFFFFF;--sel-shadow:0 2px 6px rgba(42,27,92,.35);--pk-tapis:#a52335;--pk-tapis2:#5a0f1c;--pk-or:#c9a24a;--pk-bois:#7a4a24}
+
+.langpick button[aria-pressed="true"],.billing button[aria-pressed="true"]{background:var(--sel);color:var(--on-sel);box-shadow:var(--sel-shadow)}
+
+
+
+.word,.nav ul a,.navr .btn.small{white-space:nowrap}
+@media (min-width:521px){.resil-link{white-space:nowrap}}
+@media (min-width:1181px){.nav ul{gap:14px}
+.nav ul a{font-size:.92rem}
+.resil-link{font-size:.82rem}
+.word{font-size:1.4rem}
+.logo-ic{width:30px;height:30px}
+.nav .wrap{gap:12px}}
+@media (min-width:821px) and (max-width:1180px){
+  .nav ul{display:flex}
+
+  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:8px;gap:8px}
+
+  .nav nav{order:3;width:100%}
+
+  .nav ul{gap:20px;overflow-x:auto;padding:2px 0;scrollbar-width:none}
+
+  .nav ul a{font-size:.92rem}}
+
+
+
+
+[hidden]{display:none !important}
+@media (max-width:1180px){
+  .nav nav{-webkit-mask-image:linear-gradient(90deg,#000 84%,transparent);mask-image:linear-gradient(90deg,#000 84%,transparent)}
+
+  .nav ul{padding-right:40px}
+
+  .nav ul a{display:inline-block;padding:8px 0;line-height:1.1}}
+
+
+.langpick a{font-weight:600;font-size:.86rem;color:var(--muted);padding:7px 12px;text-decoration:none;display:inline-block}
+
+.langpick a[aria-current="true"]{background:var(--sel);color:var(--on-sel);box-shadow:var(--sel-shadow)}
+
+a.resil-link{display:inline-block}
+
+
+
+
+.btn.primary{background:var(--sel);color:#fff}
+
+.btn.primary:hover{background:#15201C}
+
+.btn.is-off{opacity:.55;cursor:default;pointer-events:none}
+h3{font-family:var(--sans)}
 :root{--bg:#EEF0EC;--bg2:#E6E9E5;--surface:#FFFFFF;--ink:#15201C;--muted:#5B6863;--line:#D2D8D4;--pink:#B8327F;
   --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;color-scheme:light}
@@ -45,16 +205,75 @@ footer .liens{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
 footer .liens a{color:var(--ink);font-weight:600;text-decoration:none}
 footer .liens a:hover{color:var(--pink)}
 @media (max-width:560px){h1{font-size:1.75rem}}
+figure{margin:14px 0 18px;padding:14px;border:1px dashed var(--line);border-radius:12px;background:var(--surface)}
+figure img{max-width:100%;height:auto;display:block;border-radius:8px}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:8px}
+.capture-a-faire{font-weight:700;color:var(--pink)}
 </style>
 </head>
 <body>
-<div class="bar"><div class="in">
-  <a class="word" href="es/">solve it <b>poker</b></a>
-  <div class="droite">
-    <nav class="langues" aria-label="Langue / Language / Idioma"><a href="aide.html" hreflang="fr">FR</a><a href="aide-en.html" hreflang="en">EN</a><a href="aide-es.html" hreflang="es" aria-current="page">ES</a></nav>
-    <a class="ret" href="es/">← Volver al sitio</a>
-  </div>
-</div></div>
+<header class="nav"><div class="wrap"><a class="word" href="/es/" aria-label="Solve It Poker, inicio"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
+<rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="130.0" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="800.3" y="241.7" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="688.6" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="353.4" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="576.9" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="465.1" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="465.1" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="576.9" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="353.4" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="688.6" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="130.0" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
+<rect x="241.7" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="353.4" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="465.1" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="576.9" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="688.6" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<rect x="800.3" y="800.3" width="93.7" height="93.7" rx="20.6" fill="#3B2A73"/>
+<circle cx="512" cy="512" r="227" fill="#2A1B5C"/>
+<circle cx="512" cy="512" r="174.0" fill="none" stroke="#FF6B57" stroke-width="62"/>
+<rect x="495.0" y="306.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(0.0 512.0 338.0)"/>
+<rect x="645.7" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(60.0 662.7 425.0)"/>
+<rect x="645.7" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(120.0 662.7 599.0)"/>
+<rect x="495.0" y="654.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(180.0 512.0 686.0)"/>
+<rect x="344.3" y="567.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(240.0 361.3 599.0)"/>
+<rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
+<circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
+<rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
+</svg><span>solve it <span class="accent">poker</span></span></a><nav aria-label="Navegación principal"><ul><li><a href="/es/#fonctions">Solver</a></li><li><a href="/es/#tracker">Tracker</a></li><li><a href="/es/#entrainement">Entrenamiento</a></li><li><a href="/es/#tarif">Precios</a></li><li><a href="/es/#faq">Preguntas</a></li><li><a href="/es/ranges/">Rangos gratis</a></li></ul></nav><div class="navr"><a class="resil-link" href="/es/#resiliation">Cancelar tu suscripción</a><a class="btn primary small" href="/es/#telecharger">Descargar</a><div class="langpick" role="group" aria-label="Idioma del sitio"><a href="aide.html" hreflang="fr" lang="fr">FR</a><a href="aide-en.html" hreflang="en" lang="en">EN</a><a href="aide-es.html" hreflang="es" lang="es" aria-current="true">ES</a></div></div></div></header>
 <main><article>
 <h1>Ayuda e instalación</h1>
 <h2>Instalar Solve It Poker</h2>
@@ -73,7 +292,14 @@ footer .liens a:hover{color:var(--pink)}
 <h3>En Windows</h3>
 <ol>
 <li>Haz doble clic en el archivo <strong>.exe</strong> descargado.</li>
-<li>Windows muestra «Windows protegió su PC»: haz clic en <strong>Más información</strong> y después en <strong>Ejecutar de todas formas</strong>. Este mensaje aparece porque la aplicación todavía no está firmada para Windows.</li>
+<li>Windows muestra «Windows protegió su PC» (es el filtro SmartScreen de Windows): haz clic en <strong>Más información</strong> y después en <strong>Ejecutar de todas formas</strong>. Este mensaje aparece porque la aplicación todavía no está firmada para Windows: no dice que sea peligrosa, solo que Microsoft no la conoce.</li>
+</ol>
+<figure>
+<p class="capture-a-faire">[CAPTURE À FAIRE SUR WINDOWS] Pantalla azul «Windows protegió su PC», con el enlace «Más información» y después el botón «Ejecutar de todas formas» rodeados.</p>
+<figcaption>Lo que muestra Windows la primera vez que se abre el instalador, mientras la aplicación no esté firmada. Los textos exactos deben comprobarse en un PC real con Windows 10 y 11.</figcaption>
+</figure>
+
+<ol start="3">
 <li>Sigue los pasos de la instalación.</li>
 <li>Abre Solve It Poker desde el menú Inicio o desde el acceso directo del escritorio.</li>
 </ol>
@@ -90,7 +316,7 @@ footer .liens a:hover{color:var(--pink)}
 <ol>
 <li><strong>Accesibilidad</strong>: Ajustes del Sistema &gt; Privacidad y seguridad &gt; Accesibilidad, añade «Solve It Poker» y activa la casilla.</li>
 <li><strong>Automatización</strong>: en la misma sección, «Automatización», permite «System Events» para Solve It Poker.</li>
-<li><strong>Grabación de pantalla</strong> (solo si juegas varias mesas de Spin; el nombre exacto cambia según la versión de macOS): en la misma sección, permite Solve It Poker. La aplicación lee los nicks para reconocer cada mesa. No se graba ni se envía nada.</li>
+<li><strong>Grabación de pantalla</strong> (si juegas varias mesas de Spin, o en las mesas Escape, donde el HUD lee los nicks en pantalla; el nombre exacto cambia según la versión de macOS): en la misma sección, permite Solve It Poker. La aplicación lee los nicks para reconocer cada mesa. No se graba ni se envía nada.</li>
 </ol>
 <p>Después cierra la aplicación (⌘Q) y vuelve a abrirla.</p>
 <p>Si el HUD no aparece aunque Solve It Poker esté activado en Accesibilidad: quítalo (–), vuelve a añadirlo (+), actívalo y reinicia la aplicación. Solo hay que hacerlo una vez: la aplicación está firmada con un certificado de Apple, así que el permiso se conserva de una versión a otra.</p>

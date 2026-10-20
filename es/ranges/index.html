@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rangos de póker gratis: Spin &amp; Go, Expresso y torneos 6-max — Solve It Poker</title>
+<title>Rangos de póker gratis: Spin &amp; Go, Expresso y torneos 6-max</title>
 <meta name="description" content="Siete rangos preflop gratis calculados con solver: Spin &amp; Go y Expresso con 25, 15 y 10 BB, torneo 6-max con 30, 20 y 10 BB. Tablas mano por mano.">
 <link rel="canonical" href="https://www.solve-it-poker.com/es/ranges/">
 <link rel="alternate" hreflang="fr" href="https://www.solve-it-poker.com/ranges/">
@@ -19,6 +19,8 @@
 <meta property="og:description" content="Siete rangos preflop gratis calculados con solver: Spin &amp; Go y Expresso con 25, 15 y 10 BB, torneo 6-max con 30, 20 y 10 BB. Tablas mano por mano.">
 <meta property="og:url" content="https://www.solve-it-poker.com/es/ranges/">
 <meta property="og:image" content="https://www.solve-it-poker.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/logo-icone.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/BarlowSemiCondensed-Bold.woff2" as="font" type="font/woff2" crossorigin>
@@ -299,6 +301,98 @@ footer a:hover{color:var(--ink)}
   .nav ul a{font-size:.92rem}
 }
 
+/* ---- 15 octobre 2026 : mise en oeuvre de l'audit (secteurs A, B, I2) ---- */
+/* « hidden » doit gagner sur les display des classes (.btn, .lead…) : c'est ce qui cache la variante
+   paiement / attente non retenue (voir PAIEMENT dans scripts_v5.js). */
+[hidden]{display:none !important}
+/* B5 : le menu qui defile sur telephone montre qu'il continue (degrade a droite), liens d'au moins 32 px. */
+@media (max-width:1180px){
+  .nav nav{-webkit-mask-image:linear-gradient(90deg,#000 84%,transparent);mask-image:linear-gradient(90deg,#000 84%,transparent)}
+  .nav ul{padding-right:40px}
+  .nav ul a{display:inline-block;padding:8px 0;line-height:1.1}
+}
+/* B7 : meme en-tete partout — pastille de langue violette aussi quand ce sont des liens (pages de
+   ranges, aide), et le lien de resiliation en forme de lien sur ces pages. */
+.langpick a{font-weight:600;font-size:.86rem;color:var(--muted);padding:7px 12px;text-decoration:none;display:inline-block}
+.langpick a[aria-current="true"]{background:var(--sel);color:var(--on-sel);box-shadow:var(--sel-shadow)}
+a.resil-link{display:inline-block}
+/* B4 : grilles lisibles sous 480 px — le texte des cases disparait, les rangs s'affichent autour,
+   et une case touchee s'ecrit sous la grille. */
+.gwrap{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto}
+.glab{display:none}
+.gsel{margin:8px 0 0;min-height:1.3em;font-size:.95rem;font-weight:600;color:var(--ink)}
+.gsel:empty{margin:0;min-height:0}
+.ghint{display:none;margin:6px 0 0;font-size:.82rem;color:var(--muted)}
+@media (max-width:480px){
+  .gwrap{grid-template-columns:auto minmax(0,1fr);gap:2px}
+  .glab{display:grid;gap:2px;font:600 .7rem/1 var(--cond);color:var(--muted)}
+  .glab i{display:flex;align-items:center;justify-content:center;font-style:normal}
+  .glab-top{grid-column:2;grid-row:1;grid-template-columns:repeat(13,minmax(0,1fr))}
+  .glab-top i{height:1.1em}
+  .glab-left{grid-column:1;grid-row:2;grid-template-rows:repeat(13,minmax(0,1fr))}
+  .glab-left i{width:1.1em}
+  .mini,.rg{grid-column:2;grid-row:2}
+  .mini i,.rg i{font-size:0 !important}
+  .gsel{grid-column:1/-1;grid-row:3}
+  .ghint{display:block}
+}
+/* B6 : capture agrandie dans un <dialog>. */
+.shot .frame img{cursor:zoom-in}
+dialog.zoom{width:min(96vw,1600px);max-width:none;max-height:96vh;padding:0;background:#15201C;border:0;border-radius:12px;overflow:auto}
+dialog.zoom img{display:block;max-width:100%;height:auto;margin:0 auto;cursor:zoom-out}
+dialog.zoom::backdrop{background:rgba(8,4,20,.85)}
+.zoom-close{position:sticky;top:8px;float:right;margin:8px;width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:#15201C;font-size:26px;line-height:1;cursor:pointer;z-index:1}
+/* A15 / I1 : formulaire « Etre prevenu de l'ouverture ». */
+.attente{max-width:620px;margin:0 auto}
+.att-row{display:flex;gap:10px;flex-wrap:wrap}
+.att-row input{flex:1 1 260px;font:inherit;padding:12px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+.att-row input:focus{outline:2px solid var(--sel);outline-offset:2px}
+.att-consent{display:flex;gap:10px;align-items:flex-start;margin:14px 0 0;font-size:.92rem;color:var(--muted)}
+.att-consent input{margin-top:4px;accent-color:var(--sel)}
+.att-msg{margin:12px 0 0;font-size:.95rem;color:var(--shove)}
+.att-msg.ok{color:var(--brand-hi)}
+.att-msg a{font-weight:600}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* I2 : une carte par type de joueur. */
+.segs .feat h3{font-size:1.25rem}
+.seg-link{margin-top:10px !important;font-size:.92rem}
+.seg-link a{font-weight:600;color:var(--brand)}
+/* B2 : date visible sur les pages de ranges. */
+.rmaj{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+
+
+/* ---- v6 (19/10/2026) : page d'accueil d'après la maquette A « La grille d'abord » ----
+   Mêmes couleurs que l'application ; le violet du logo (--sel) pour les boutons principaux,
+   les couleurs d'action réservées aux données ; filets plutôt qu'ombres, chiffres tabulaires. */
+.btn.primary{background:var(--sel);color:#fff}
+.btn.primary:hover{background:#15201C}
+.price.featured{border-color:var(--sel);border-width:2px}
+.price .badge{background:var(--sel);color:#fff}
+.btn.is-off{opacity:.55;cursor:default;pointer-events:none}
+.incl li.incl-train{color:var(--ink);font-weight:600}
+.hero h1{letter-spacing:-.01em;line-height:1.02}
+.band{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fmt-wrap{overflow-x:auto}
+.fmt{width:100%;min-width:680px;border-collapse:collapse;font-size:1.05rem}
+.fmt thead th{font-family:var(--cond);font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:12px 16px 12px 0;border-bottom:2px solid var(--ink)}
+.fmt tbody th{text-align:left;font-weight:600;padding:18px 16px 18px 0;border-bottom:1px solid var(--line)}
+.fmt td{padding:18px 16px 18px 0;border-bottom:1px solid var(--line);color:#3B4743}
+.fmt td.num{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--ink)}
+.fmt-note{text-align:left;margin-top:18px}
+.kicker{font-family:var(--cond);font-weight:600;font-size:.86rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.shot .txt h2{font-size:clamp(1.9rem,3.4vw,2.6rem);line-height:1.05;margin:0 0 14px}
+.frame-fig{margin:0}
+.frame-fig .frame{border-radius:6px;box-shadow:none}
+.frame-fig figcaption{margin-top:10px;font-size:.9rem;color:var(--muted)}
+.stepsA{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px}
+.stepsA li{border-top:2px solid var(--ink);padding-top:16px}
+.stepsA .n{display:block;font-family:var(--cond);font-weight:700;font-size:2.5rem;line-height:1;color:var(--sel);font-variant-numeric:tabular-nums}
+.stepsA b{display:block;font-size:1.3rem;margin:8px 0 4px}
+.stepsA p{margin:0;color:var(--muted)}
+.stepsA-note{text-align:left;margin-top:28px}
+footer .legal{margin:10px 0 0}
+@media (max-width:640px){.fmt{min-width:0;font-size:.95rem}.fmt td.num{white-space:normal}.fmt thead th,.fmt tbody th,.fmt td{padding-right:10px}}
+
 .rpage{padding:34px 0 60px}
 .crumb{font-size:.9rem;color:var(--muted);margin:0 0 18px}
 .crumb a{text-decoration:none}.crumb a:hover{color:var(--ink)}
@@ -309,7 +403,7 @@ footer a:hover{color:var(--ink)}
 .rcard{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px}
 .rcard h2{margin:0 0 12px;font-size:1.15rem}
 .rg{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:2px}
-.rg i{aspect-ratio:1/1;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 clamp(.52rem,1.25vw,.8rem)/1 var(--cond);font-style:normal;color:var(--ink)}
+.rg i{aspect-ratio:1/1;border-radius:4px;display:flex;align-items:center;justify-content:center;font:600 clamp(.52rem,1.25vw,.8rem)/1 var(--cond);font-style:normal;color:var(--ink);cursor:pointer}
 .rg i.d{color:#fff}
 .rnote{font-size:.85rem;color:var(--muted);margin:12px 0 0}
 .rkeys{margin:0;padding-left:1.2em}.rkeys li{margin:0 0 10px}
@@ -323,12 +417,18 @@ footer a:hover{color:var(--ink)}
 .rlist a:hover{border-color:var(--muted)}
 .rlist b{display:block;font-family:var(--cond);font-size:1.12rem}
 .rlist span{color:var(--muted);font-size:.9rem}
-.langpick a{font-weight:600;font-size:.78rem;color:var(--muted);padding:4px 7px;text-decoration:none;display:inline-block}
-.langpick a[aria-current="true"]{background:var(--ink);color:var(--cream)}
 </style>
+<!-- Mesure d'audience sans cookie — DÉSACTIVÉE (15/10/2026). Trois outils possibles, sans cookie ni
+     consentement RGPD d'après leurs propres descriptions (prix et conditions à vérifier au moment du choix) :
+     Plausible (payant, hébergé en Europe), GoatCounter (gratuit pour un petit site), Cloudflare Web Analytics
+     (gratuit). Pour activer Plausible : retirer ce commentaire autour de la balise script, mettre le domaine,
+     et ajouter la mention dans la politique de confidentialité (lot Juridique). Exemple :
+<script defer data-domain="www.solve-it-poker.com" src="https://plausible.io/js/script.js"></script>
+     GoatCounter : <script data-goatcounter="https://VOTRE-CODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+-->
 </head>
 <body>
-<header class="nav"><div class="wrap"><a class="word" href="/es/" aria-label="Solve It Poker"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
+<header class="nav"><div class="wrap"><a class="word" href="/es/" aria-label="Solve It Poker, inicio"><svg class="logo-ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" aria-hidden="true">
 <rect width="1024" height="1024" rx="230.4" fill="#2A1B5C"/>
 <rect x="130.0" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
 <rect x="241.7" y="130.0" width="93.7" height="93.7" rx="20.6" fill="#5CF2C0"/>
@@ -389,8 +489,8 @@ footer a:hover{color:var(--ink)}
 <rect x="344.3" y="393.0" width="34" height="64" rx="6" fill="#FFF4E6" transform="rotate(300.0 361.3 425.0)"/>
 <circle cx="512" cy="512" r="125" fill="none" stroke="#FF6B57" stroke-width="7" stroke-dasharray="16 12" opacity=".75"/>
 <rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
-</svg><span>solve it <span class="accent">poker</span></span></a><nav aria-label="Navigation"><ul><li><a href="/es/ranges/">Rangos gratis</a></li><li><a href="/es/#fonctions">Funciones</a></li><li><a href="/es/#tarif">Precios</a></li></ul></nav><div class="navr"><a class="btn primary small" href="/es/#tarif">Prueba gratis</a><div class="langpick" role="group"><a href="/ranges/" hreflang="fr" lang="fr">FR</a><a href="/en/ranges/" hreflang="en" lang="en">EN</a><a href="/es/ranges/" hreflang="es" lang="es" aria-current="true">ES</a></div></div></div></header>
-<main class="rpage"><div class="wrap"><p class="crumb"><a href="/es/">Inicio</a> › Rangos gratis</p><h1>Rangos gratis</h1><p class="lead">Siete tablas calculadas por el solver de Solve It Poker, para situaciones que se repiten constantemente en Spin y en torneos 6-max. Cada casilla dice qué hacer con la mano y con qué frecuencia.</p><h2>Spin & Go y Expresso (3 jugadores y heads-up)</h2><ul class="rlist"><li><a href="/es/ranges/spin-boton-25bb/"><b>Botón con 25 BB, inicio de la partida</b><span>36,6 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-boton-15bb/"><b>Botón con 15 BB, 3 jugadores</b><span>32,1 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-ciega-pequena-10bb/"><b>Ciega pequeña con 10 BB, heads-up</b><span>81,3 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-ciega-grande-pagar-all-in-10bb/"><b>Ciega grande ante un all-in, 10 BB</b><span>35,7 % manos jugadas</span></a></li></ul><h2>Torneo 6-max, con ante</h2><ul class="rlist"><li><a href="/es/ranges/torneo-utg-30bb/"><b>UTG con 30 BB, apertura</b><span>22,8 % manos jugadas</span></a></li><li><a href="/es/ranges/torneo-boton-20bb/"><b>Botón con 20 BB</b><span>40,3 % manos jugadas</span></a></li><li><a href="/es/ranges/torneo-ciega-pequena-10bb/"><b>Ciega pequeña con 10 BB, push or fold</b><span>76,3 % manos jugadas</span></a></li></ul><div class="rcta"><h2>Todas las situaciones, y tus propias manos</h2><p>Estas siete tablas son una muestra. Solve It Poker incluye todas las posiciones y todas las profundidades de 25 a 2 BB en Spin y de 100 a 2 BB en torneos de 5 y 6 jugadores, además del cash game a 100 BB, de la mesa de 6 al heads-up (con el rake de Winamax y los botes inflados de las mesas Escape y Hold-up). Compara cada una de tus manos con este cálculo.</p><div class="cta"><a class="btn primary" href="/es/#tarif">Probar 7 días gratis</a><a class="btn ghost" href="/es/#fonctions">Ver el programa</a></div></div></div></main>
+</svg><span>solve it <span class="accent">poker</span></span></a><nav aria-label="Navegación principal"><ul><li><a href="/es/#fonctions">Solver</a></li><li><a href="/es/#tracker">Tracker</a></li><li><a href="/es/#entrainement">Entrenamiento</a></li><li><a href="/es/#tarif">Precios</a></li><li><a href="/es/#faq">Preguntas</a></li><li><a href="/es/ranges/">Rangos gratis</a></li></ul></nav><div class="navr"><a class="resil-link" href="/es/#resiliation">Cancelar tu suscripción</a><a class="btn primary small" href="/es/#telecharger">Descargar</a><div class="langpick" role="group" aria-label="Idioma del sitio"><a href="/ranges/" hreflang="fr" lang="fr">FR</a><a href="/en/ranges/" hreflang="en" lang="en">EN</a><a href="/es/ranges/" hreflang="es" lang="es" aria-current="true">ES</a></div></div></div></header>
+<main class="rpage"><div class="wrap"><p class="crumb"><a href="/es/">Inicio</a> › Rangos gratis</p><h1>Rangos gratis</h1><p class="rmaj">Actualizado el 19 de octubre de 2026</p><p class="lead">Siete tablas calculadas por el solver de Solve It Poker, para situaciones que se repiten constantemente en Spin y en torneos 6-max. Cada casilla dice qué hacer con la mano y con qué frecuencia.</p><h2>Spin & Go y Expresso (3 jugadores y heads-up)</h2><ul class="rlist"><li><a href="/es/ranges/spin-boton-25bb/"><b>Botón con 25 BB, inicio de la partida</b><span>36,6 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-boton-15bb/"><b>Botón con 15 BB, 3 jugadores</b><span>32,1 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-ciega-pequena-10bb/"><b>Ciega pequeña con 10 BB, heads-up</b><span>81,3 % manos jugadas</span></a></li><li><a href="/es/ranges/spin-ciega-grande-pagar-all-in-10bb/"><b>Ciega grande ante un all-in, 10 BB</b><span>35,7 % manos jugadas</span></a></li></ul><h2>Torneo 6-max, con ante</h2><ul class="rlist"><li><a href="/es/ranges/torneo-utg-30bb/"><b>UTG con 30 BB, apertura</b><span>21,4 % manos jugadas</span></a></li><li><a href="/es/ranges/torneo-boton-20bb/"><b>Botón con 20 BB</b><span>38,6 % manos jugadas</span></a></li><li><a href="/es/ranges/torneo-ciega-pequena-10bb/"><b>Ciega pequeña con 10 BB, push or fold</b><span>76,7 % manos jugadas</span></a></li></ul><div class="rcta"><h2>Todas las situaciones, y tus propias manos</h2><p>Estas siete tablas son una muestra. Solve It Poker incluye todas las posiciones y todas las profundidades de 25 a 2 BB en Spin, de 100 a 10 BB en torneos de 5 y 6 jugadores (y tus propios stacks de 2 a 150 BB con «Calcular mi spot»), además del cash game a 100 BB de 5 y 6 jugadores, con el rake de Winamax y los botes inflados de las mesas Escape y Hold-up. Compara cada una de tus manos con este cálculo y te da una estimación en ciegas.</p><div class="cta"><a class="btn primary" href="/es/#telecharger">Descargar — entrenamiento gratis</a><a class="btn ghost" href="/es/#fonctions">Ver el programa</a></div></div></div></main>
 <footer>
   <div class="wrap">
     <div class="row">
@@ -457,7 +557,7 @@ footer a:hover{color:var(--ink)}
 <rect x="466" y="466" width="92" height="92" rx="20" fill="#FF7AB6"/>
 </svg><span>solve it <span class="accent">poker</span></span></a>
       <ul>
-        <li><a href="../aide-es.html">Ayuda e instalación</a></li>
+        <li><a href="/aide-es.html">Ayuda e instalación</a></li>
         <li><a href="/cgv.html">Condiciones generales de venta (en francés)</a></li>
         <li><a href="/es/ranges/">Rangos gratis</a></li><li><a href="/mentions-legales.html">Aviso legal (en francés)</a></li>
         <li><a href="/cgv.html#art17">Datos personales</a></li>
@@ -465,7 +565,10 @@ footer a:hover{color:var(--ink)}
         <li><a href="/es/#resiliation">Cancelar tu suscripción</a></li>
       </ul>
     </div>
-    <p class="legal">Solve It Poker es un programa de análisis y entrenamiento de póker, solo para mayores de edad. No organiza ninguna partida, no acepta ninguna apuesta, no guarda fondos y no está vinculado a ningún operador de juego. No está afiliado a Winamax ni a PokerStars, ni aprobado por ellos. «Winamax», «Expresso», «Escape», «Hold-up», «PokerStars» y «Spin &amp; Go» son marcas de sus respectivos propietarios. Los resultados del programa se basan en un modelo y no garantizan ninguna ganancia. Las capturas de pantalla usan manos de demostración.</p>
+    <p class="legal">Todo se calcula en tu ordenador: tus historiales nunca se envían. Interfaz en francés, inglés, español e italiano.</p>
+    <p class="legal">Solve It Poker es un programa de análisis y entrenamiento de póker, reservado a mayores de edad. No organiza partidas, no acepta apuestas, no guarda fondos y no está vinculado a ningún operador de juego.</p>
+    <p class="legal">No está afiliado a Winamax ni a PokerStars, ni aprobado por ellos. Sus resultados se basan en un modelo y no garantizan ninguna ganancia. Las capturas usan manos de demostración.</p>
+    <p class="legal">«Winamax», «Expresso», «Escape», «Hold-up», «Trident», «PokerStars» y «Spin &amp; Go» son marcas de sus respectivos propietarios.</p>
     <p class="prevention">Si el juego ocupa demasiado espacio en tu vida, <a href="https://www.joueurs-info-service.fr/">joueurs-info-service.fr</a> (+33 9 74 75 13 13, servicio francés) responde de forma gratuita y anónima.</p>
   </div>
 </footer></body>
