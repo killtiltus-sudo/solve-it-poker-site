@@ -1,13 +1,13 @@
 {
-  "currentRelease": "0.38.5",
+  "currentRelease": "0.39.0",
   "releases": [
     {
-      "version": "0.38.5",
+      "version": "0.39.0",
       "updateTo": {
-        "version": "0.38.5",
-        "name": "Solve It Poker 0.38.5",
-        "notes": "Tournois à 8 et 7 joueurs : bibliothèque de 100 à 2 BB (ante de 0,12 BB par joueur, ouverture à 2,2 BB dès 40 BB) ; cash game en tête-à-tête : bibliothèque de 40 à 200 BB ; le tracker juge les mains des tables de 7 et 8 joueurs en tournoi et du tête-à-tête en cash ; entraînement à 8 et 7 joueurs, et en tête-à-tête en cash.",
-        "pub_date": "2026-10-18T00:00:00+00:00",
+        "version": "0.39.0",
+        "name": "Solve It Poker 0.39.0",
+        "notes": "Tournois : défense de la grosse blinde plus large et ranges plus proches des solveurs de référence (moteur ajusté, bibliothèques à 5, 6, 7 et 8 joueurs recalculées) ; profils d'adversaires du tournoi recalés sur ces nouvelles ranges ; sans profil d'adversaire, les EV affichées sont calculées exactement face aux ranges du solveur ; entraînement illimité dans les trois formules ; tables à 8 et 7 joueurs : les textes annoncent bien de 100 à 10 BB.",
+        "pub_date": "2026-10-28T00:00:00+00:00",
         "url": "https://github.com/killtiltus-sudo/solve-it-poker-site/releases/latest/download/Solve-It-Poker-Mac.zip"
       }
     }
