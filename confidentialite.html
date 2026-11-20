@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Politique de confidentialité — Solve It Poker</title>
+<meta name="description" content="Politique de confidentialité de Solve It Poker : ce que le logiciel et le site envoient, ce qui reste sur votre ordinateur, vos droits.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--bg:#EEF0EC;--bg2:#E6E9E5;--surface:#FFFFFF;--ink:#15201C;--muted:#5B6863;--line:#D2D8D4;--pink:#B8327F;
+  --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1412;--bg2:#161C19;--surface:#171D1A;--ink:#E6EBE8;--muted:#98A49F;--line:#2C3531;--pink:#FF7AB6;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62}
+.bar{border-bottom:1px solid var(--line);background:var(--surface)}
+.bar .in{max-width:780px;margin:0 auto;padding:14px 16px;display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between}
+.word{font-family:var(--cond);font-size:1.35rem;font-weight:700;text-decoration:none;color:var(--ink)}
+.word b{color:var(--pink);font-weight:700}
+.bar a.ret{color:var(--muted);text-decoration:none;font-weight:600;font-size:.92rem}
+.bar a.ret:hover{color:var(--ink)}
+main{max-width:780px;margin:0 auto;padding:0 16px}
+article{padding-block:32px 8px}
+h1{font-family:var(--cond);font-size:2.2rem;font-weight:700;line-height:1.12;margin:0 0 6px;text-wrap:balance}
+.maj{color:var(--muted);margin:0 0 26px;font-size:.95rem}
+h2{font-family:var(--cond);font-size:1.4rem;font-weight:700;margin:34px 0 8px;text-wrap:balance;scroll-margin-top:16px}
+h3{font-size:1.05rem;font-weight:700;margin:22px 0 6px}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin-bottom:6px}
+strong{font-weight:700}
+hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+em{color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:.95rem}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--cond);font-weight:700;letter-spacing:.02em}
+td:nth-child(n+3),th:nth-child(n+3){font-variant-numeric:tabular-nums;white-space:nowrap}
+.tablewrap{overflow-x:auto}
+nav.som{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 30px}
+nav.som p{font-family:var(--cond);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.82rem;color:var(--muted);margin:0 0 8px}
+nav.som ol{margin:0;padding-left:20px;columns:2;column-gap:36px}
+nav.som li{margin-bottom:5px;padding-right:12px;break-inside:avoid}
+nav.som a{color:var(--ink);text-decoration:none}
+nav.som a:hover{color:var(--pink);text-decoration:underline}
+a{color:var(--pink)}
+footer{border-top:1px solid var(--line);margin-top:40px;background:var(--bg2)}
+footer .in{max-width:780px;margin:0 auto;padding:22px 16px 34px;color:var(--muted);font-size:.88rem}
+footer a{color:var(--muted)}
+footer .liens{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:12px}
+footer .liens a{color:var(--ink);font-weight:600;text-decoration:none}
+footer .liens a:hover{color:var(--pink)}
+@media (max-width:560px){h1{font-size:1.75rem}nav.som ol{columns:1}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="word" href="index.html">solve it <b>poker</b></a>
+  <a class="ret" href="index.html">&larr; Retour au site</a>
+</div></div>
+<main><article>
+<h1>Politique de confidentialité</h1>
+<p class="maj">En vigueur au 20 novembre 2026.</p>
+<nav class="som"><p>Sommaire</p><ol><li><a href="#s1">Qui est responsable de vos données</a></li><li><a href="#s2">Le principe : vos mains restent chez vous</a></li><li><a href="#s3">Ce que le logiciel envoie à nos serveurs</a></li><li><a href="#s4">Votre compte et votre abonnement</a></li><li><a href="#s5">Mesures d'usage : ce que nous comptons, et ce que nous ne comptons pas</a></li><li><a href="#s6">Formulaires du site</a></li><li><a href="#s7">Les données d'autres joueurs, sur votre ordinateur</a></li><li><a href="#s8">Qui voit vos données (destinataires et sous-traitants)</a></li><li><a href="#s9">Combien de temps</a></li><li><a href="#s10">Sécurité</a></li><li><a href="#s11">Vos droits</a></li><li><a href="#s12">Mineurs</a></li><li><a href="#s13">Modifications</a></li></ol></nav>
+<h2 id="s1">1. Qui est responsable de vos données</h2>
+<p>Le logiciel Solve It Poker et le site solve-it-poker.com sont édités par la <strong>SARL LA PETITE
+ORANGE</strong>, 48 rue Claude Balbastre, 34070 Montpellier, France, RCS Montpellier 819 458 878
+(« nous », « l'éditeur »). Pour toute question sur vos données : contact@solve-it-poker.com, ou par
+courrier à l'adresse du siège.</p>
+<p>L'éditeur est responsable du traitement des données décrites aux sections 3 à 6. La section 7
+(données d'adversaires enregistrées sur votre ordinateur) explique une situation particulière :
+ces données restent chez vous et l'éditeur n'en est pas responsable.</p>
+<p>L'éditeur n'a pas désigné de délégué à la protection des données : sa taille et ses traitements
+ne l'y obligent pas.</p>
+<h2 id="s2">2. Le principe : vos mains restent chez vous</h2>
+<p>Le logiciel est installé sur votre ordinateur. <strong>Vos historiques de mains, vos statistiques, vos
+notes, vos ranges et tout ce que le logiciel calcule restent sur votre ordinateur.</strong> La fenêtre du
+logiciel est techniquement empêchée de se connecter à internet ; seule une petite partie du
+programme parle à nos serveurs, et uniquement pour ce qui est décrit à la section 3.</p>
+<p>Nous ne recevons jamais : vos mains, vos résultats, vos statistiques, les pseudos de vos
+adversaires, vos notes, vos ranges, des captures d'écran.</p>
+<h2 id="s3">3. Ce que le logiciel envoie à nos serveurs</h2>
+<h3>3.1 Vérification de l'abonnement (serveur de licences)</h3>
+<p>Pour vérifier que vous avez un abonnement ou un essai en cours, le logiciel échange avec notre
+serveur de licences. Il transmet :</p>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Quand</th>
+<th>Ce qui est envoyé</th>
+<th>Pourquoi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vous demandez un code d'activation</td>
+<td>votre adresse e-mail, la langue du logiciel</td>
+<td>retrouver votre abonnement et vous envoyer un code à six chiffres</td>
+</tr>
+<tr>
+<td>Vous activez le logiciel</td>
+<td>votre adresse e-mail, le code reçu, un identifiant d'ordinateur tiré au hasard par le logiciel, un nom d'ordinateur</td>
+<td>compter les ordinateurs activés (deux au plus) et vous permettre de les reconnaître dans la liste</td>
+</tr>
+<tr>
+<td>Toutes les cinq minutes, logiciel ouvert</td>
+<td>l'identifiant d'ordinateur, un secret propre à cet ordinateur, un numéro de session</td>
+<td>vérifier que l'abonnement est toujours valide et qu'un seul ordinateur est ouvert à la fois</td>
+</tr>
+<tr>
+<td>Vous libérez un ordinateur</td>
+<td>l'identifiant d'ordinateur et son secret</td>
+<td>retirer cet ordinateur de la liste</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Sur le nom d'ordinateur.</strong> Le logiciel n'envoie pas le nom que votre système d'exploitation donne
+à votre ordinateur (qui contient souvent votre prénom). Il envoie un nom neutre : le type
+d'ordinateur (« Mac » ou « PC Windows ») suivi de quatre caractères de l'identifiant tiré au hasard,
+pour distinguer deux ordinateurs du même type dans la liste.</p>
+<p><strong>Sur le signal toutes les cinq minutes.</strong> Le serveur ne garde que la <strong>date du dernier signal</strong>
+(un seul horodatage par ordinateur, écrasé à chaque fois), pas l'historique des signaux. Cette
+date permet de savoir qu'un ordinateur est actif, et donc, en creux, quand vous utilisez le
+logiciel. Nous ne l'utilisons à aucune autre fin que la gestion de la licence et les indicateurs
+agrégés de la section 5.1. L'adresse IP d'où vient le signal est vue par notre hébergeur (Cloudflare,
+section 8) ; nous ne l'enregistrons pas dans notre base.</p>
+<p>L'adresse IP et le navigateur d'où viennent ces requêtes ne sont pas stockés par nous dans la
+base de licences. Les journaux techniques que notre hébergeur tient pour faire fonctionner et
+protéger son réseau relèvent de ses propres conditions (section 8).</p>
+<h3>3.2 Mises à jour</h3>
+<p>À l'ouverture, le logiciel consulte un petit fichier sur notre site (www.solve-it-poker.com) pour
+savoir si une nouvelle version existe, puis, si vous acceptez, télécharge la nouvelle version depuis
+GitHub (GitHub Releases). Aucune donnée personnelle n'est envoyée ; votre adresse IP est
+techniquement vue par l'hébergeur du site (GitHub Pages) et par GitHub, comme pour toute page web.</p>
+<h3>3.3 Rien d'autre</h3>
+<p>Le logiciel n'envoie aucune statistique d'usage, aucun rapport d'erreur, aucune capture, aucune
+main. La seule exception est facultative : les jalons d'usage de la section 5.2, envoyés seulement
+si vous cochez la case prévue, décochée par défaut.</p>
+<h2 id="s4">4. Votre compte et votre abonnement</h2>
+<h3>4.1 Données traitées</h3>
+<p>Quand vous souscrivez un essai ou un abonnement, le prestataire de paiement (section 8) nous
+transmet : votre adresse e-mail, votre nom tel que vous l'avez saisi, l'identifiant de client et
+d'abonnement chez le prestataire, la formule choisie, l'état de l'abonnement (essai, actif, impayé,
+résilié), la date de fin de période, et le cas échéant un remboursement ou un litige de carte.</p>
+<p>Nous ne recevons <strong>jamais</strong> votre numéro de carte ni vos coordonnées bancaires : ils sont traités
+par le prestataire de paiement seul.</p>
+<h3>4.2 Pourquoi (bases légales)</h3>
+<ul>
+<li>Exécution du contrat (article 6.1 b du RGPD) : fournir le logiciel, vérifier la licence, gérer les
+  ordinateurs, répondre à vos demandes.</li>
+<li>Obligation légale (6.1 c) : conserver les pièces comptables.</li>
+<li>Intérêt légitime (6.1 f) : prévenir la fraude à la licence (limite d'ordinateurs, codes
+  d'activation), sécuriser le service, produire des indicateurs agrégés (section 5.1).</li>
+</ul>
+<h3>4.3 Courriers électroniques</h3>
+<p>Nous vous écrivons pour : vous envoyer un code d'activation, vous prévenir avant la fin de l'essai,
+vous informer de la reconduction annuelle (obligation légale), vous prévenir d'un échec de
+paiement, répondre à vos demandes, et vous informer des changements des conditions ou de cette
+politique. <strong>Nous n'envoyons pas de lettre d'information commerciale sans votre accord.</strong></p>
+<h2 id="s5">5. Mesures d'usage : ce que nous comptons, et ce que nous ne comptons pas</h2>
+<h3>5.1 Indicateurs agrégés, sans rien collecter de plus</h3>
+<p>À partir des données que le serveur de licences possède déjà (section 3.1 et 4.1), nous calculons
+des <strong>chiffres d'ensemble</strong> : nombre d'essais démarrés, part des essais devenus abonnements,
+nombre d'ordinateurs actifs par semaine, résiliations, changements de formule. Ces chiffres ne
+permettent pas de vous identifier et ne sont pas croisés avec vos mains (que nous n'avons pas).
+Base légale : intérêt légitime de l'éditeur à connaître l'usage de son service, sans collecte
+supplémentaire.</p>
+<h3>5.2 Jalons d'usage — uniquement si vous cochez la case</h3>
+<p>Dans le logiciel, rubrique « Mes données », une case <strong>« Aider à améliorer Solve It Poker »</strong>,
+<strong>décochée par défaut</strong>, permet d'ajouter à la vérification de l'abonnement quelques dates, sans
+contenu : le jour de quelques premières fois (dossiers d'historiques trouvés, première importation,
+premier HUD, première page Leaks, premier entraînement), la version du logiciel et le système
+d'exploitation. <strong>Jamais</strong> de pseudo, de main, de montant, de statistique de jeu ni de capture.
+Ces dates sont rattachées à l'ordinateur, jamais à vos mains. Vous pouvez décocher la case à tout
+moment : plus rien n'est envoyé, et ce qui l'a été est effacé de notre serveur à la vérification
+suivante. Base légale : consentement (article 6.1 a du RGPD), retirable à tout moment.</p>
+<h3>5.3 Site : pas de cookie, pas de mesure d'audience</h3>
+<p>Le site n'utilise <strong>aucun outil de mesure d'audience</strong> et ne dépose <strong>aucun cookie</strong>. Il enregistre
+seulement, dans le stockage local de votre navigateur, la langue que vous avez choisie, pour vous la
+proposer à nouveau. Si un outil de mesure d'audience devait être installé, cette politique serait
+mise à jour avant.</p>
+<p><strong>Polices de caractères.</strong> Toutes les pages du site chargent leurs polices depuis notre propre site :
+aucune donnée n'est transmise à un service de polices.</p>
+<h2 id="s6">6. Formulaires du site</h2>
+<h3>6.1 Être prévenu de l'ouverture</h3>
+<p>Si vous nous demandez d'être prévenu de l'ouverture des ventes (le formulaire du site vous invite
+aujourd'hui à nous écrire à contact@solve-it-poker.com), nous n'utilisons votre adresse e-mail que
+pour cela : un e-mail d'ouverture, et au plus deux rappels. Base légale : consentement. Vous pouvez
+retirer votre demande à tout moment en nous écrivant. Conservation : jusqu'à l'ouverture des ventes
+puis six mois au plus, ou jusqu'au retrait de votre demande.</p>
+<h3>6.2 Formulaire de résiliation</h3>
+<p>Le site contient un formulaire « Résilier votre contrat » (résiliation en trois clics, article
+L215-1-1 du code de la consommation). Il demande votre nom, votre adresse e-mail et, si vous l'avez,
+la référence de votre commande, pour retrouver votre abonnement. Ces données servent uniquement à
+traiter votre demande et sont conservées un an comme preuve. Base légale : exécution du contrat et
+obligation légale.</p>
+<h2 id="s7">7. Les données d'autres joueurs, sur votre ordinateur</h2>
+<p>C'est le point particulier de ce logiciel, et nous préférons l'expliquer clairement.</p>
+<h3>7.1 Ce qui est enregistré</h3>
+<p>Quand le logiciel lit vos historiques de mains, il en tire des statistiques sur <strong>les joueurs que
+vous avez rencontrés</strong>, désignés par leur <strong>pseudo</strong> de salle de poker : fréquences de jeu, gains ou
+pertes dans les mains jouées contre vous, type de joueur déduit de ces fréquences, et les notes que
+vous écrivez vous-même. Sur les tables Escape de Winamax, le logiciel garde aussi un petit fichier
+qui associe l'image de la plaque de pseudo à ce pseudo, pour reconnaître plus vite un joueur déjà
+croisé (au plus 6 000 entrées ; aucune capture d'écran n'est conservée).</p>
+<p>Tout cela est enregistré <strong>uniquement sur votre ordinateur</strong>, dans les données du logiciel. Rien
+n'est envoyé à l'éditeur ni à d'autres utilisateurs. Il n'existe <strong>aucune base commune</strong> entre
+utilisateurs.</p>
+<h3>7.2 D'où viennent ces données</h3>
+<p>Exclusivement des fichiers d'historique que votre salle de poker vous remet, et qui ne concernent
+que des mains auxquelles vous avez participé, plus la lecture des pseudos affichés à l'écran pour
+rattacher le HUD à la bonne table. C'est le même principe que les trackers classiques du marché.</p>
+<h3>7.3 Qui est responsable de ces données</h3>
+<p>Ces données sont collectées et conservées par vous, sur votre ordinateur, pour l'étude de votre
+propre jeu. L'éditeur fournit l'outil mais n'y a jamais accès, comme l'éditeur d'un tableur ou d'un
+carnet d'adresses. <strong>Vous êtes responsable de ces données ; le logiciel vous aide à les limiter et à
+les effacer (7.4).</strong></p>
+<p>L'éditeur ne mettra jamais en place de base commune d'adversaires sans nouveau texte, nouvelle base
+légale et accord écrit des salles de poker.</p>
+<h3>7.4 Ce que le logiciel vous permet</h3>
+<ul>
+<li><strong>Effacer les mains importées</strong> : un bouton supprime toute la base locale du logiciel. Vos
+  fichiers d'historiques, eux, ne sont jamais touchés.</li>
+<li><strong>Limiter la durée de conservation</strong> : rubrique « Mes données », vous pouvez choisir de ne garder
+  les mains importées que 6, 12, 24 ou 36 mois (sans limite par défaut) ; les mains plus anciennes
+  sont alors effacées de la base du logiciel.</li>
+<li><strong>Supprimer un joueur</strong> : depuis sa fiche, « Supprimer ce joueur » retire ses statistiques du
+  logiciel ; vous pouvez le rétablir depuis « Mes données ».</li>
+<li>Désinstaller le logiciel sans supprimer ses données les laisse sur votre ordinateur. Ces données
+  ne sont pas chiffrées : elles sont protégées par votre session d'utilisateur.</li>
+</ul>
+<h3>7.5 Si vous êtes un joueur adverse et que vous nous lisez</h3>
+<p>Vous ne pouvez pas apparaître dans une base de l'éditeur : il n'en a pas. Vos pseudos et
+statistiques ne peuvent se trouver que sur l'ordinateur des joueurs qui vous ont rencontré, à partir
+des fichiers que leur salle leur remet, comme avec n'importe quel tracker. Pour toute question,
+écrivez à contact@solve-it-poker.com.</p>
+<h2 id="s8">8. Qui voit vos données (destinataires et sous-traitants)</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Destinataire</th>
+<th>Rôle</th>
+<th>Données</th>
+<th>Lieu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cloudflare, Inc.</strong></td>
+<td>héberge le serveur de licences et sa base</td>
+<td>données des sections 3.1, 4.1 et 5.2</td>
+<td>États-Unis et réseau mondial</td>
+</tr>
+<tr>
+<td><strong>Resend, Inc.</strong></td>
+<td>envoie les e-mails de code d'activation</td>
+<td>adresse e-mail, contenu de l'e-mail (code)</td>
+<td>États-Unis</td>
+</tr>
+<tr>
+<td><strong>Prestataire de paiement</strong> (indiqué à l'article 3 des conditions générales avant l'ouverture des ventes)</td>
+<td>vend l'abonnement, encaisse, facture ; nous transmet l'état de l'abonnement</td>
+<td>identité, e-mail, moyen de paiement (jamais transmis à l'éditeur), abonnement</td>
+<td>indiqué avec sa désignation</td>
+</tr>
+<tr>
+<td><strong>GitHub, Inc.</strong></td>
+<td>héberge le site et les fichiers d'installation</td>
+<td>adresse IP des visiteurs, journaux techniques</td>
+<td>États-Unis</td>
+</tr>
+</tbody>
+</table></div>
+<p>Le prestataire de paiement agit comme responsable de traitement pour la vente, selon ses propres
+conditions. Les transferts de données hors de l'Union européenne sont encadrés par les garanties
+prévues par le RGPD : décision d'adéquation, dont le cadre de protection des données UE–États-Unis
+(Data Privacy Framework), ou clauses contractuelles types de la Commission européenne.</p>
+<p>Nous ne vendons, ne louons, ne cédons vos données à personne. Nous ne les transmettons à une
+autorité que si la loi nous y oblige.</p>
+<h2 id="s9">9. Combien de temps</h2>
+<div class="tablewrap"><table>
+<thead>
+<tr>
+<th>Donnée</th>
+<th>Durée</th>
+<th>Pourquoi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Compte, e-mail, abonnements (serveur de licences)</td>
+<td>durée de l'abonnement, puis <strong>1 an</strong> après sa fin, puis suppression</td>
+<td>répondre à une réclamation, permettre un réabonnement simple (article 17.5 des conditions générales)</td>
+</tr>
+<tr>
+<td>Pièces comptables (factures, chez le prestataire et dans nos comptes)</td>
+<td><strong>10 ans</strong></td>
+<td>article L123-22 du code de commerce</td>
+</tr>
+<tr>
+<td>Ordinateurs activés (identifiant, nom, date du dernier signal)</td>
+<td>tant que l'ordinateur est activé ; suppression <strong>30 jours</strong> après sa libération ou la fin de l'abonnement</td>
+<td>gestion de la limite de deux ordinateurs ; la date du dernier signal est écrasée à chaque signal, jamais historisée</td>
+</tr>
+<tr>
+<td>Codes d'activation</td>
+<td><strong>15 minutes</strong> (expiration), suppression à l'activation ou à l'expiration</td>
+<td>sécurité</td>
+</tr>
+<tr>
+<td>Compteurs de remplacement d'ordinateur</td>
+<td><strong>30 jours</strong></td>
+<td>limite de trois remplacements par trente jours</td>
+</tr>
+<tr>
+<td>Identifiants des messages reçus du prestataire de paiement (anti-doublon)</td>
+<td><strong>30 jours</strong></td>
+<td>sécurité, puis inutile</td>
+</tr>
+<tr>
+<td>Demande d'être prévenu de l'ouverture</td>
+<td>jusqu'à l'ouverture des ventes + <strong>6 mois</strong>, ou retrait de la demande</td>
+<td>finalité unique</td>
+</tr>
+<tr>
+<td>Formulaire de résiliation</td>
+<td><strong>1 an</strong></td>
+<td>preuve de la demande</td>
+</tr>
+<tr>
+<td>Jalons d'usage (5.2)</td>
+<td><strong>13 mois</strong> au plus, ou effacement dès que vous décochez la case ; chiffres d'ensemble sans limite</td>
+<td>comparaison d'une année sur l'autre</td>
+</tr>
+<tr>
+<td>Journaux techniques (Cloudflare, GitHub)</td>
+<td>selon les conditions de ces prestataires</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Données sur votre ordinateur (mains, adversaires, notes, ranges, cache de plaques)</td>
+<td>sous votre contrôle ; effacement à votre demande (7.4)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="s10">10. Sécurité</h2>
+<ul>
+<li>La fenêtre du logiciel ne peut joindre aucun site ; le HUD non plus. Seul le cœur du programme
+  parle au serveur de licences, en HTTPS.</li>
+<li>Les jetons de licence sont signés par le serveur et vérifiés sur votre ordinateur ; le secret de
+  votre ordinateur n'est stocké que sous forme d'empreinte sur le serveur.</li>
+<li>Les réponses du serveur sont identiques qu'une adresse e-mail soit cliente ou non, pour ne pas
+  révéler qui est abonné.</li>
+<li>Le logiciel ne lit aucun identifiant matériel (numéro de série, adresse MAC) ; l'identifiant
+  d'ordinateur est tiré au hasard et ne permet pas de vous retrouver ailleurs.</li>
+<li>En cas de violation de données susceptible de vous porter atteinte, nous vous en informons et
+  notifions la CNIL dans les conditions prévues par le RGPD (articles 33 et 34).</li>
+</ul>
+<h2 id="s11">11. Vos droits</h2>
+<p>Vous disposez des droits d'<strong>accès</strong>, de <strong>rectification</strong>, d'<strong>effacement</strong>, de <strong>limitation</strong>,
+d'<strong>opposition</strong> (notamment aux traitements fondés sur l'intérêt légitime) et de <strong>portabilité</strong>, et
+du droit de <strong>retirer votre consentement</strong> à tout moment (jalons d'usage, demande d'être prévenu de
+l'ouverture). Vous
+pouvez aussi définir des directives sur le sort de vos données après votre décès.</p>
+<p>Pour les exercer : contact@solve-it-poker.com, ou par courrier au siège. Nous répondons dans un
+délai d'un mois (prolongeable de deux mois pour une demande complexe, en vous prévenant). Nous
+pouvons vous demander de confirmer votre identité, par exemple en écrivant depuis l'adresse e-mail
+de votre compte.</p>
+<p>Vous pouvez introduire une réclamation auprès de la <strong>Commission nationale de l'informatique et des
+libertés (CNIL)</strong>, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, www.cnil.fr. Si vous
+résidez dans un autre pays de l'Union européenne, vous pouvez aussi saisir l'autorité de votre pays.</p>
+<p>Pour les données traitées par le prestataire de paiement en qualité de vendeur (facturation), vous
+pouvez exercer vos droits auprès de lui ; nous vous indiquons comment sur simple demande.</p>
+<h2 id="s12">12. Mineurs</h2>
+<p>Le logiciel et l'abonnement sont réservés aux personnes majeures. Nous ne collectons pas sciemment
+de données de mineurs ; si vous pensez qu'un mineur a souscrit, écrivez-nous et le compte sera
+clôturé.</p>
+<h2 id="s13">13. Modifications</h2>
+<p>Nous pouvons modifier cette politique, notamment quand une fonction du logiciel change. La date de
+version figure en haut. Un changement important (nouvelle donnée collectée, nouveau destinataire,
+nouvelle finalité) vous est annoncé par e-mail au moins un mois avant, et, s'il repose sur votre
+consentement, ne s'applique qu'avec votre accord.</p>
+</article></main>
+<footer><div class="in">
+  <div class="liens">
+    <a href="index.html">Accueil</a>
+    <a href="cgv.html">Conditions générales</a>
+    <a href="mentions-legales.html">Mentions légales</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="resiliation-remboursement.html">Résiliation et remboursement</a>
+  </div>
+  <p>Solve It Poker est un logiciel d'analyse et d'entraînement au poker, réservé aux personnes
+  majeures. Il n'organise aucune partie, n'accepte aucune mise, ne détient aucun fonds et n'est lié
+  à aucun opérateur de jeu. Il n'est ni affilié à Winamax ou à PokerStars, ni approuvé par eux. Les
+  résultats du logiciel reposent sur un modèle et ne garantissent aucun gain.</p>
+  <p>Si le jeu prend trop de place dans votre vie, <a href="https://www.joueurs-info-service.fr/">joueurs-info-service.fr</a>
+  (09 74 75 13 13, appel non surtaxé) répond gratuitement et anonymement.</p>
+</div></footer>
+</body>
+</html>

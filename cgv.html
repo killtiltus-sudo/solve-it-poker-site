@@ -6,10 +6,13 @@
 <title>Conditions générales de vente et d'utilisation — Solve It Poker</title>
 <meta name="description" content="Conditions générales de vente et d'utilisation de Solve It Poker, logiciel d'étude du poker édité par la SARL La Petite Orange.">
 <meta name="robots" content="index,follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@600;700&display=swap">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <style>
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-Medium.woff2") format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Barlow";src:url("assets/fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600 700;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Barlow Semi Condensed";src:url("assets/fonts/BarlowSemiCondensed-Bold.woff2") format("woff2");font-weight:700;font-display:swap}
 :root{--bg:#EEF0EC;--bg2:#E6E9E5;--surface:#FFFFFF;--ink:#15201C;--muted:#5B6863;--line:#D2D8D4;--pink:#B8327F;
   --sans:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --cond:"Barlow Semi Condensed","Arial Narrow",system-ui,sans-serif;color-scheme:light}
@@ -62,7 +65,7 @@ footer .liens a:hover{color:var(--pink)}
 </div></div>
 <main><article>
 <h1>Conditions générales de vente et d'utilisation</h1>
-<p class="maj">En vigueur au 5 novembre 2026.</p>
+<p class="maj">En vigueur au 20 novembre 2026.</p>
 <nav class="som"><p>Sommaire</p><ol><li><a href="#art1">Identification de l'éditeur</a></li><li><a href="#art2">Objet et documents contractuels</a></li><li><a href="#art3">Vente des abonnements</a></li><li><a href="#art4">Description du logiciel et des formules</a></li><li><a href="#art5">Conditions d'accès</a></li><li><a href="#art6">Commande, essai gratuit et reconduction</a></li><li><a href="#art7">Prix et paiement</a></li><li><a href="#art8">Droit de rétractation</a></li><li><a href="#art9">Durée, résiliation et impayés</a></li><li><a href="#art10">Licence d'utilisation</a></li><li><a href="#art11">Fin de l'abonnement et sort des données</a></li><li><a href="#art12">Mises à jour et évolution des salles de poker</a></li><li><a href="#art13">Garantie légale de conformité</a></li><li><a href="#art14">Responsabilité et absence de garantie de résultat</a></li><li><a href="#art15">Respect des règlements des salles de poker</a></li><li><a href="#art16">Propriété intellectuelle</a></li><li><a href="#art17">Données personnelles</a></li><li><a href="#art18">Service client et réclamations</a></li><li><a href="#art19">Modification des présentes conditions</a></li><li><a href="#art20">Droit applicable et litiges</a></li></ol></nav>
 <h2 id="art1">Article 1 — Identification de l'éditeur</h2>
 <p>Le logiciel Solve It Poker est édité par :</p>
@@ -70,7 +73,7 @@ footer .liens a:hover{color:var(--pink)}
 dont le siège social est situé 48 rue Claude Balbastre, 34070 Montpellier, France,
 immatriculée au Registre du commerce et des sociétés de Montpellier sous le numéro
 819 458 878, numéro de TVA intracommunautaire FR13 819 458 878.</p>
-<p>Représentant légal et directeur de la publication : Jeremy Bergogne.
+<p>Cogérants : Jonathan Bergogne et Jeremy Bergogne. Directeur de la publication : Jeremy Bergogne.
 Adresse électronique de contact : contact@solve-it-poker.com</p>
 <p>Le site est hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
 CA 94107, États-Unis.</p>
@@ -93,13 +96,21 @@ s'engageant à en faciliter le traitement.</p>
 Il comporte trois ensembles de fonctions :</p>
 <ul>
 <li>un <strong>tracker</strong>, qui lit les fichiers d'historique de mains écrits par le logiciel de poker de
-  l'utilisateur sur son propre ordinateur, et en tire des statistiques ;</li>
+  l'utilisateur sur son propre ordinateur, et en tire des statistiques sur son propre jeu et sur
+  les adversaires qu'il a rencontrés ;</li>
 <li>un <strong>affichage de table (HUD)</strong>, qui présente ces statistiques dans de petites fenêtres posées
-  au-dessus des tables ;</li>
-<li>un <strong>solveur préflop</strong>, avec une bibliothèque de ranges d'équilibre calculées à l'avance et un
-  mode d'entraînement joué hors des tables.</li>
+  au-dessus des tables ; pour rattacher chaque fenêtre à la bonne table, le logiciel peut lire
+  les pseudonymes affichés à l'écran au moyen d'une capture d'écran traitée localement ;</li>
+<li>un <strong>module d'étude préflop</strong>, avec une bibliothèque de ranges d'équilibre calculées à
+  l'avance, le calcul d'une situation saisie par l'utilisateur (« Calculer mon spot »),
+  l'adaptation des ranges à des profils d'adversaires et un mode d'entraînement, le tout utilisé
+  hors des tables.</li>
 </ul>
-<p>Trois formules sont proposées, chacune couvrant le format Spin et les tournois à six joueurs :</p>
+<p>Les formats couverts sont : le <strong>Spin</strong> (trois joueurs et tête-à-tête), les <strong>tournois</strong> à trois,
+cinq et six joueurs, et le <strong>cash game</strong> à cinq et six joueurs. Le détail des fonctions disponibles
+par format et par formule figure sur le site au jour de la commande ; certaines fonctions peuvent
+être indiquées comme en version bêta.</p>
+<p>Trois formules sont proposées :</p>
 <div class="tablewrap"><table>
 <thead>
 <tr>
@@ -112,51 +123,66 @@ Il comporte trois ensembles de fonctions :</p>
 <tbody>
 <tr>
 <td>Track</td>
-<td>Le tracker, le HUD, les rapports et la revue de mains</td>
+<td>Le tracker, le HUD, les rapports et la revue de mains, et l'entraînement illimité</td>
 <td>14,90 €</td>
 <td>134 €</td>
 </tr>
 <tr>
 <td>Solve</td>
-<td>Le solveur, les profils d'adversaires, les spots et les ranges personnelles</td>
+<td>Le module d'étude, les profils d'adversaires, les spots et les ranges personnelles, et l'entraînement illimité</td>
 <td>19,90 €</td>
 <td>179 €</td>
 </tr>
 <tr>
 <td>Improve</td>
-<td>Track et Solve réunis, plus l'entraînement illimité</td>
+<td>Track et Solve réunis, et l'entraînement illimité</td>
 <td>29,90 €</td>
 <td>269 €</td>
 </tr>
 </tbody>
 </table></div>
+<p>Sans abonnement, l'entraînement est limité à dix mains par jour.</p>
 <p>Les prix sont exprimés toutes taxes comprises, taxe sur la valeur ajoutée française incluse.
 Pour un utilisateur établi hors de France, la taxe applicable est celle de son pays de résidence,
 déterminée et collectée par le vendeur mentionné à l'article 3.</p>
-<p>Le passage d'une formule à une autre en cours d'abonnement n'est pas proposé. L'utilisateur qui
-souhaite changer de formule résilie son abonnement et en souscrit un nouveau.</p>
+<p><strong>Changement de formule.</strong> L'utilisateur peut changer de formule à tout moment depuis son espace
+client. Le passage à une formule plus chère prend effet immédiatement ; la différence de prix est
+calculée au prorata de la période restante et facturée. Le passage à une formule moins chère prend
+effet à la fin de la période en cours, sans remboursement de la différence.</p>
 <p>L'éditeur peut proposer des offres promotionnelles ou des codes de réduction, dont les conditions
 et la durée sont précisées lors de l'offre. Ces offres ne sont pas cumulables sauf mention
 contraire.</p>
 <h2 id="art5">Article 5 — Conditions d'accès</h2>
 <p><strong>5.1 — Majorité.</strong> Le logiciel est réservé aux personnes majeures. L'utilisateur déclare avoir
 dix-huit ans révolus au jour de la commande.</p>
-<p><strong>5.2 — Matériel requis.</strong> Le logiciel fonctionne sur macOS version 12.0 (Monterey) ou
-postérieure, processeur Apple ou Intel, et sur Windows 10 ou 11 en 64 bits. Une connexion à internet est
-nécessaire à l'activation et à la vérification périodique de la licence.</p>
-<p><strong>5.3 — Logiciels de poker pris en charge.</strong> À la date des présentes : Winamax et PokerStars.
+<p><strong>5.2 — Matériel requis.</strong> Le logiciel fonctionne sur macOS version 13 (Ventura) ou
+postérieure, processeur Apple ou Intel, et sur Windows 10 ou 11 en 64 bits. Une connexion à
+internet est nécessaire à l'activation et à la vérification périodique de la licence ; le logiciel
+fonctionne ensuite sans connexion pendant trois jours au plus d'affilée, après quoi une nouvelle
+vérification est nécessaire. Sur Mac, l'affichage de table nécessite les autorisations
+« Accessibilité » et, pour plusieurs tables, « Enregistrement de l'écran ».</p>
+<p><strong>5.3 — Logiciels de poker pris en charge.</strong> À la date des présentes, le logiciel lit les
+historiques de mains de Winamax et de PokerStars. L'affichage de table (HUD) est proposé sur
+les tables Winamax.
 D'autres salles pourront être ajoutées sans que cela constitue un engagement.</p>
-<p><strong>5.4 — Nature de l'outil.</strong> Solve It Poker est un outil d'étude. Il n'intervient à aucun moment
-sur le déroulement d'une partie : il ne joue pas à la place de l'utilisateur, ne mise pas, ne
-sélectionne ni les tables ni les places, et ne fournit aucun conseil sur une main en cours.</p>
+<p><strong>5.4 — Nature de l'outil.</strong> Solve It Poker est un outil d'étude et de suivi. Il n'intervient à
+aucun moment sur le déroulement d'une partie : il ne joue pas à la place de l'utilisateur, ne
+mise pas, ne sélectionne ni les tables ni les places, et ne fournit aucun conseil sur une main en
+cours. Il n'organise aucune partie, n'accepte aucune mise et ne détient aucun fonds.</p>
 <h2 id="art6">Article 6 — Commande, essai gratuit et reconduction</h2>
-<p><strong>6.1 — Commande.</strong> La commande s'effectue en ligne. L'utilisateur reçoit par courrier
-électronique une confirmation et une clé de licence permettant d'activer le logiciel.</p>
-<p><strong>6.2 — Essai gratuit.</strong> Chaque formule s'ouvre par une période d'essai gratuite de sept jours.
-Les coordonnées bancaires sont demandées dès la souscription. <strong>À l'issue des sept jours, et
-sauf résiliation intervenue avant ce terme, l'abonnement devient payant et le premier paiement
-est prélevé automatiquement.</strong> L'utilisateur peut résilier à tout moment pendant l'essai, sans
-frais et sans motif, selon les modalités de l'article 9.</p>
+<p><strong>6.1 — Commande et activation.</strong> La commande s'effectue en ligne. L'utilisateur reçoit par
+courrier électronique une confirmation. Pour activer le logiciel, il saisit dans celui-ci l'adresse
+électronique de sa commande et reçoit par courrier électronique un <strong>code d'activation à six
+chiffres</strong>, valable quinze minutes. Aucune clé de licence n'est à conserver.</p>
+<p><strong>6.2 — Essai gratuit.</strong> Chaque formule s'ouvre par une période d'essai gratuite de <strong>quatorze
+jours</strong>. Les coordonnées bancaires sont demandées dès la souscription. <strong>À l'issue des quatorze
+jours, et sauf résiliation intervenue avant ce terme, l'abonnement devient payant et le premier
+paiement est prélevé automatiquement.</strong> L'utilisateur en est averti par courrier électronique
+avant la fin de l'essai. Il peut résilier à tout moment pendant l'essai, sans frais et sans
+motif, selon les modalités de l'article 9. Un seul essai est accordé par personne.</p>
+<p><strong>6.2 bis — Découverte sans abonnement.</strong> Indépendamment de l'essai, le logiciel peut être
+installé sans commande : seules les fonctions indiquées comme gratuites sur le site sont alors
+ouvertes, dans les limites qui y sont précisées.</p>
 <p><strong>6.3 — Reconduction.</strong> L'abonnement se renouvelle automatiquement par périodes successives
 d'un mois ou d'un an, selon la formule choisie, jusqu'à résiliation.</p>
 <p><strong>6.4 — Information sur la reconduction.</strong> Conformément à l'article L215-1 du code de la
@@ -178,7 +204,9 @@ de la consommation. Cette demande et cette renonciation sont recueillies par une
 distincte, non pré-cochée.</p>
 <p>L'utilisateur qui ne renonce pas à son droit de rétractation conserve ses quatorze jours, l'accès
 au logiciel n'étant ouvert qu'au terme de ce délai ou au jour de la renonciation.</p>
-<p>La période d'essai gratuite de sept jours s'exerce indépendamment de ce droit.</p>
+<p>La période d'essai gratuite de quatorze jours s'exerce indépendamment de ce droit. Lorsque
+l'utilisateur ne renonce pas à son droit de rétractation, l'essai gratuit court à partir de
+l'ouverture effective de l'accès.</p>
 <h2 id="art9">Article 9 — Durée, résiliation et impayés</h2>
 <p><strong>9.1 — Résiliation par l'utilisateur.</strong> L'utilisateur peut résilier à tout moment, sans motif et
 sans frais, depuis la fonction de résiliation accessible en permanence sur le site et dans le
@@ -187,30 +215,34 @@ logiciel, en trois clics, conformément à l'article L215-1-1 du code de la cons
 L'utilisateur conserve l'accès jusqu'à cette date. Aucun remboursement, même partiel, n'est dû au
 titre de la période en cours. Pendant l'essai gratuit, aucun paiement n'est prélevé.</p>
 <p><strong>9.3 — Échec de paiement.</strong> En cas de rejet du paiement, le vendeur procède à des tentatives de
-relance et en informe l'utilisateur. L'accès au logiciel est maintenu pendant ces relances et
-suspendu à leur terme, soit sept jours après le premier rejet. Passé ce délai, et à défaut de
-régularisation, l'abonnement est résilié de plein droit. L'utilisateur qui régularise avant la
-résiliation retrouve son accès sans démarche particulière.</p>
+relance et en informe l'utilisateur, qui est invité à mettre à jour son moyen de paiement.
+L'accès au logiciel est maintenu pendant ces relances et suspendu à leur terme.
+Passé ce délai, et à défaut de régularisation, l'abonnement est résilié de plein droit.
+L'utilisateur qui régularise avant la résiliation retrouve son accès sans démarche particulière.</p>
 <p><strong>9.4 — Résiliation par l'éditeur.</strong> L'éditeur peut résilier l'abonnement, après mise en demeure
 restée sans effet, en cas de manquement grave de l'utilisateur, notamment en cas de partage ou
-de revente de la clé de licence, de contournement des protections du logiciel, ou d'utilisation
-contraire à l'article 15.</p>
+de revente de l'accès au logiciel, de contournement des protections du logiciel, ou
+d'utilisation contraire à l'article 15.</p>
 <h2 id="art10">Article 10 — Licence d'utilisation</h2>
 <p>L'éditeur concède à l'utilisateur, pour la durée de son abonnement, un droit d'usage personnel,
 non exclusif et non cessible du logiciel.</p>
-<p><strong>10.1 — Nombre de postes.</strong> La licence peut être activée sur deux ordinateurs simultanément,
-appartenant à l'utilisateur et utilisés par lui seul.</p>
-<p><strong>10.2 — Changement de machine.</strong> L'utilisateur peut à tout moment libérer un poste depuis le
+<p><strong>10.1 — Nombre de postes.</strong> La licence peut être activée sur deux ordinateurs, appartenant à
+l'utilisateur et utilisés par lui seul. <strong>Un seul des deux peut être ouvert à la fois</strong> : lorsque
+le logiciel s'ouvre sur un ordinateur, l'autre se met en pause et peut reprendre la main sur
+demande de l'utilisateur.</p>
+<p><strong>10.2 — Changement d'ordinateur.</strong> L'utilisateur peut à tout moment libérer un poste depuis le
 logiciel, par la commande « Libérer cet ordinateur », puis activer sa licence sur un autre
-ordinateur. Ces transferts effectués par l'utilisateur lui-même ne sont pas limités en nombre.</p>
-<p>Lorsque l'ordinateur est perdu, volé ou hors d'usage et que le poste ne peut plus être libéré
-depuis le logiciel, l'éditeur procède à la libération sur demande, une fois par période
-d'abonnement. Au-delà, la demande est examinée au cas par cas.</p>
+ordinateur. Libérer un ordinateur n'est pas limité en nombre.</p>
+<p>Lorsque les deux postes sont occupés et que l'utilisateur active un troisième ordinateur, il
+remplace l'un des deux depuis le logiciel (« Remplacer cet ordinateur »), par exemple quand
+l'ancien est perdu, volé ou hors d'usage. <strong>Ces remplacements sont limités à trois par période de
+trente jours.</strong> Au-delà, l'utilisateur libère un poste depuis l'autre ordinateur ou écrit à
+contact@solve-it-poker.com ; la demande est examinée au cas par cas.</p>
 <p><strong>10.3 — Interdictions.</strong> Sont interdits : le partage, la cession, la location ou la revente de
-la clé de licence ; la décompilation, le désassemblage ou l'ingénierie inverse du logiciel, hors
-les cas prévus par la loi ; la mise à disposition de tout ou partie du logiciel ou de ses
-bibliothèques de ranges à des tiers ; et l'utilisation du logiciel pour un service rendu à des
-tiers.</p>
+l'accès au logiciel ou du code d'activation ; la décompilation, le désassemblage ou l'ingénierie
+inverse du logiciel, hors les cas prévus par la loi ; la mise à disposition de tout ou partie du
+logiciel ou de ses bibliothèques de ranges à des tiers ; et l'utilisation du logiciel pour un
+service rendu à des tiers.</p>
 <p><strong>10.4 — Ranges personnelles.</strong> Les ranges créées par l'utilisateur lui appartiennent sans
 réserve. Il peut les exporter à tout moment depuis le logiciel.</p>
 <h2 id="art11">Article 11 — Fin de l'abonnement et sort des données</h2>
@@ -222,15 +254,26 @@ l'éditeur.</p>
 <p><strong>Fenêtre d'export.</strong> Pendant les trente jours qui suivent l'expiration de l'abonnement, le
 logiciel s'ouvre en lecture seule, à la seule fin de permettre à l'utilisateur d'exporter ses
 ranges personnelles. Aucune autre fonction n'est accessible pendant cette période.</p>
+<p><strong>Remboursement total ou litige de carte.</strong> En cas de remboursement total de la période en cours
+ou de contestation du paiement auprès de l'établissement bancaire, l'accès au logiciel cesse
+immédiatement, sans fenêtre d'export. Un remboursement partiel ne modifie pas l'accès.</p>
 <h2 id="art12">Article 12 — Mises à jour et évolution des salles de poker</h2>
-<p>Pendant la durée de l'abonnement, l'utilisateur bénéficie sans supplément de toutes les mises à
-jour du logiciel, correctives comme évolutives.</p>
-<p>Les salles de poker peuvent modifier sans préavis le format des fichiers d'historique qu'elles
-produisent. L'éditeur s'engage à mettre en œuvre ses meilleurs efforts pour rétablir la
-compatibilité dans un délai raisonnable. S'il apparaît que la compatibilité avec une salle
-mentionnée à l'article 5.3 ne peut être rétablie, l'utilisateur peut résilier sans préavis et
-obtient le remboursement de la fraction non consommée de sa période en cours.</p>
-<p>Il en va de même si une salle de poker venait à interdire l'usage du logiciel sur sa plateforme.</p>
+<p><strong>12.1 — Mises à jour.</strong> Pendant la durée de l'abonnement, l'utilisateur bénéficie sans
+supplément de toutes les mises à jour du logiciel, correctives comme évolutives.</p>
+<p><strong>12.2 — Changement de format.</strong> Les salles de poker peuvent modifier sans préavis le format des
+fichiers d'historique qu'elles produisent ou l'affichage de leurs tables. L'éditeur s'engage à
+mettre en œuvre ses meilleurs efforts pour rétablir la compatibilité dans un délai raisonnable.
+S'il apparaît que la compatibilité avec une salle mentionnée à l'article 5.3 ne peut être
+rétablie, l'utilisateur peut résilier sans préavis et obtient le remboursement de la fraction non
+consommée de sa période en cours.</p>
+<p><strong>12.3 — Règlement des salles.</strong> Chaque salle de poker fixe librement les logiciels tiers qu'elle
+tolère et peut changer ses règles à tout moment. L'éditeur a soumis une description du logiciel
+aux salles mentionnées à l'article 5.3 et publie sur le site, pour chacune, l'état de sa
+démarche (réponse écrite reçue ou demande en attente), sans que cela constitue une garantie :
+<strong>l'éditeur ne peut pas garantir qu'une salle autorise ou continuera d'autoriser le logiciel</strong>.
+Si une salle venait à interdire l'usage du logiciel sur sa plateforme, ou si l'éditeur devait
+retirer une fonction à la demande d'une salle, l'utilisateur peut résilier sans préavis et obtient
+le remboursement de la fraction non consommée de sa période en cours.</p>
 <h2 id="art13">Article 13 — Garantie légale de conformité</h2>
 <p>L'éditeur est tenu de la garantie légale de conformité du contenu numérique prévue aux articles
 L224-25-12 et suivants du code de la consommation, ainsi que de la garantie des vices cachés
@@ -238,19 +281,34 @@ prévue aux articles 1641 et suivants du code civil.</p>
 <p>Il fournit pendant toute la durée du contrat les mises à jour nécessaires au maintien de la
 conformité du logiciel.</p>
 <h2 id="art14">Article 14 — Responsabilité et absence de garantie de résultat</h2>
-<p>Les résultats du solveur reposent sur un modèle mathématique. Ils constituent une aide à
-l'étude et <strong>ne garantissent aucun gain</strong>. Le poker comporte une part de hasard et un risque de
-perte financière. L'éditeur ne peut être tenu responsable des pertes de jeu de l'utilisateur, ni
-des décisions qu'il prend à la table.</p>
+<p>Les résultats du module d'étude reposent sur un modèle mathématique du préflop ; le jeu après le
+flop y est estimé par un modèle, non résolu. Les montants de « BB perdues » et les écarts affichés
+par le tracker sont des <strong>estimations du modèle</strong>, pas des mesures de gains réels. Ces résultats
+constituent une aide à l'étude et <strong>ne garantissent aucun gain</strong> : aucun gain, aucune amélioration
+de résultats ni aucun niveau de jeu n'est garanti. Le poker comporte une part de hasard et un
+risque de perte financière. L'éditeur ne peut être tenu responsable des pertes de jeu de
+l'utilisateur, ni des décisions qu'il prend à la table.</p>
 <p>La responsabilité de l'éditeur ne saurait être engagée pour les dommages indirects. Elle est
 limitée, pour les dommages directs, au montant des sommes versées par l'utilisateur au titre des
 douze derniers mois, sauf faute lourde ou dolosive et sauf dommage corporel.</p>
 <h2 id="art15">Article 15 — Respect des règlements des salles de poker</h2>
 <p>Chaque salle de poker fixe librement les logiciels tiers qu'elle autorise. Il appartient à
 l'utilisateur de s'assurer que son usage de Solve It Poker est conforme au règlement de la salle
-sur laquelle il joue.</p>
-<p>Le module d'étude et l'entraînement se verrouillent automatiquement lorsqu'une session de jeu est
-en cours, et se déverrouillent après la fermeture de la dernière table.</p>
+sur laquelle il joue, et de lire l'état des démarches publié par l'éditeur (article 12.3).</p>
+<p>Pour aider l'utilisateur à respecter ces règlements, le logiciel applique de lui-même les
+mesures suivantes :</p>
+<ul>
+<li>le module d'étude (bibliothèque de ranges, « Calculer mon spot », adaptation aux adversaires)
+  et l'entraînement se <strong>verrouillent dès que le logiciel d'une salle de poker prise en charge
+  est ouvert</strong> sur l'ordinateur, et se déverrouillent après sa fermeture ;</li>
+<li>pendant ce temps, le tracker masque les éléments qui comparent une décision passée à celle du
+  module d'étude ;</li>
+<li>l'affichage de table peut être réglé en mode simple (fréquences seules, sans étiquette de type
+  de joueur ni courbe), mode appliqué par défaut sur les tables de certaines salles.</li>
+</ul>
+<p>Ces mesures sont une aide ; elles ne dispensent pas l'utilisateur de sa propre vigilance,
+notamment s'il utilise un autre appareil ou des documents exportés du logiciel pendant qu'il
+joue. L'utilisateur s'interdit de contourner ces verrous.</p>
 <h2 id="art16">Article 16 — Propriété intellectuelle</h2>
 <p>Le logiciel, son interface, ses bibliothèques de ranges, sa documentation et le site sont
 protégés par le droit de la propriété intellectuelle et demeurent la propriété exclusive de
@@ -259,35 +317,47 @@ l'éditeur. Aucun droit autre que la licence de l'article 10 n'est transféré.<
 ni approuvé par elles. Les marques citées appartiennent à leurs titulaires respectifs et ne sont
 mentionnées qu'à des fins d'identification.</p>
 <h2 id="art17">Article 17 — Données personnelles</h2>
+<p>Le traitement des données personnelles est décrit en détail dans la <strong>politique de
+confidentialité</strong>, accessible depuis le pied de page du site, qui fait
+partie des documents contractuels. En résumé :</p>
 <p><strong>17.1 — Ce qui reste sur l'ordinateur de l'utilisateur.</strong> Les historiques de mains, les
-statistiques, les notes et les ranges sont lus et calculés localement. Ils ne sont transmis à
-personne.</p>
-<p><strong>17.2 — Ce qui est transmis.</strong> Lors de l'activation puis lors des vérifications périodiques de
-la licence, le logiciel transmet au vendeur la clé de licence et le nom de l'ordinateur tel que le
-système d'exploitation le fournit. Ce nom peut contenir un prénom. Aucune autre donnée n'est
-transmise par le logiciel.</p>
-<p><strong>17.3 — Données de facturation.</strong> Les données de commande et de facturation sont traitées par le
-vendeur mentionné à l'article 3, selon ses propres conditions et son accord de traitement des
-données, que l'utilisateur peut consulter auprès de lui. Le lieu de traitement et les garanties
-applicables seront précisés à l'article 3 lorsque ce vendeur sera désigné.</p>
+statistiques, les notes, les ranges et le cache de reconnaissance des tables sont lus et calculés
+localement. Ils ne sont transmis à personne. La fenêtre du logiciel est techniquement empêchée de
+se connecter à internet.</p>
+<p><strong>17.2 — Ce qui est transmis à l'éditeur.</strong> Pour vérifier l'abonnement, le logiciel transmet au
+serveur de licences de l'éditeur : à l'activation, l'adresse électronique de l'utilisateur, le code
+reçu, un identifiant d'ordinateur tiré au hasard et un nom d'ordinateur ; puis, toutes les cinq
+minutes tant que le logiciel est ouvert, cet identifiant et un secret propre à l'ordinateur, le
+serveur ne conservant que la date du dernier signal. À l'ouverture, le logiciel consulte le site
+de l'éditeur pour savoir si une mise à jour existe. Aucune autre donnée n'est transmise par le
+logiciel, sauf accord explicite de l'utilisateur pour les « jalons anonymes » décrits dans la
+politique de confidentialité (case décochée par défaut).</p>
+<p><strong>17.3 — Données de commande et de facturation.</strong> Elles sont traitées par le vendeur mentionné à
+l'article 3, qui communique à l'éditeur l'adresse électronique, le nom, la formule et l'état de
+l'abonnement, jamais les coordonnées bancaires. Les sous-traitants de l'éditeur (hébergement du
+serveur de licences, envoi des codes par courrier électronique), leur localisation et les
+garanties de transfert hors Union européenne sont nommés dans la politique de confidentialité.</p>
 <p><strong>17.4 — Statistiques de joueurs adverses.</strong> Le logiciel enregistre, sur le seul ordinateur de
 l'utilisateur, les pseudonymes et les statistiques de jeu des adversaires rencontrés. Ces données
-proviennent exclusivement des fichiers que la salle de poker remet à l'utilisateur et ne
-concernent que des mains auxquelles il a lui-même participé. Elles ne sont ni centralisées, ni
-mutualisées, ni revendues. <strong>[Base légale et information des personnes concernées : à arbitrer
-avec le conseil.]</strong></p>
+proviennent exclusivement des fichiers que la salle de poker remet à l'utilisateur et de la
+lecture des pseudonymes affichés sur ses tables, et ne concernent que des mains auxquelles il a
+lui-même participé. Elles ne sont ni centralisées, ni mutualisées, ni revendues. L'éditeur n'y a jamais accès :
+l'utilisateur, qui les collecte et les conserve sur son ordinateur pour l'étude de son propre jeu,
+en est seul responsable. Le logiciel l'aide à les limiter et à les effacer (politique de
+confidentialité, section 7).</p>
 <p><strong>17.5 — Conservation.</strong> Les données de compte sont conservées un an après la fin de
 l'abonnement, puis supprimées ou anonymisées, sous réserve des durées légales de conservation
-des pièces comptables.</p>
+des pièces comptables. Les autres durées figurent dans la politique de confidentialité.</p>
 <p><strong>17.6 — Droits.</strong> L'utilisateur dispose des droits d'accès, de rectification, d'effacement, de
-limitation, d'opposition et de portabilité. Il les exerce auprès de
-contact@solve-it-poker.com et peut saisir la Commission nationale de l'informatique et
-des libertés.</p>
-<p><strong>17.7 — Site.</strong> Le site est une page statique. Il ne dépose aucun traceur autre que ceux
-strictement nécessaires à son affichage, n'utilise aucun outil de mesure d'audience et ne collecte
-aucune donnée de navigation. Aucun compte n'y est créé et aucun formulaire n'y est hébergé. Si un
-outil de mesure d'audience ou d'envoi de courriers électroniques était mis en place, la présente
-rubrique serait modifiée et le consentement des visiteurs recueilli lorsque la loi l'exige.</p>
+limitation, d'opposition et de portabilité, et du droit de retirer son consentement. Il les
+exerce auprès de contact@solve-it-poker.com et peut saisir la Commission nationale de
+l'informatique et des libertés.</p>
+<p><strong>17.7 — Site.</strong> Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience
+reposant sur un identifiant. Il héberge un formulaire de résiliation (nom, adresse électronique)
+et un formulaire d'inscription à une liste d'attente par adresse électronique, décrits dans la
+politique de confidentialité. Si un outil de mesure d'audience sans cookie est mis en place, la
+politique de confidentialité est mise à jour et le consentement des visiteurs recueilli lorsque la
+loi l'exige.</p>
 <h2 id="art18">Article 18 — Service client et réclamations</h2>
 <p>Le service client répond aux demandes adressées à contact@solve-it-poker.com dans un délai
 de quarante-huit heures ouvrées.</p>
@@ -304,16 +374,14 @@ jour de la commande.</p>
 <p>En cas de litige, l'utilisateur s'adresse d'abord au service client dans les conditions de
 l'article 18. À défaut d'accord amiable, le litige est porté devant les juridictions compétentes. L'utilisateur consommateur conserve le bénéfice des dispositions
 protectrices de la loi de son pays de résidence.</p>
-<hr />
-<p><em>Version du 28 septembre 2026. Les présentes conditions ne sont pas applicables tant qu'elles
-n'ont pas été relues par un conseil et publiées sur le site.</em></p>
 </article></main>
 <footer><div class="in">
   <div class="liens">
     <a href="index.html">Accueil</a>
     <a href="cgv.html">Conditions générales</a>
     <a href="mentions-legales.html">Mentions légales</a>
-    <a href="cgv.html#art17">Données personnelles</a>
+    <a href="confidentialite.html">Confidentialité</a>
+    <a href="resiliation-remboursement.html">Résiliation et remboursement</a>
   </div>
   <p>Solve It Poker est un logiciel d'analyse et d'entraînement au poker, réservé aux personnes
   majeures. Il n'organise aucune partie, n'accepte aucune mise, ne détient aucun fonds et n'est lié
